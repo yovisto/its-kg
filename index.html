@@ -1,0 +1,169 @@
+<html>
+<link rel="stylesheet" href="https://unpkg.com/chota@latest">
+<style>
+    :root {
+  --bg-color: #ffffff;
+  --bg-secondary-color: #f3f3f6;
+  --color-primary: #1e73be;
+  --color-lightGrey: #d2d6dd;
+  --color-grey: #747681;
+  --color-darkGrey: #3f4144;
+  --color-error: #d43939;
+  --color-success: #28bd14;
+  --grid-maxWidth: 120rem;
+  --grid-gutter: 2rem;
+  --font-size: 1.6rem;
+  --font-color: #333333;
+  --font-family-sans: sans-serif;
+  --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+}
+body {
+    padding: 50px 50px 150px 50px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightgray;
+  color: white;
+  text-align: center;
+}
+
+img {
+    max-width:200px;
+    max-height:200px;
+}
+
+h2{
+    font-size: 1.25em;
+}
+
+
+.ribbon-wrapper {
+  width: 115px;
+  height: 108px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  left: 3px;
+  .ribbon {
+    font: bold 15px sans-serif;
+    color: #333;
+    text-align: center;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform:    rotate(-45deg);
+    -ms-transform:     rotate(-45deg);
+    -o-transform:      rotate(-45deg);
+    position: relative;
+    padding: 9px 0;
+    top: 15px;
+    left: -40px;
+    width: 150px;
+    background-color: #ebb134;
+    color: #fff;
+  }
+}
+
+</style>
+<head>
+    <script src="jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/@triply/yasgui@4/build/yasgui.min.css" media="all">
+    <script src="https://unpkg.com/@triply/yasgui@4/build/yasgui.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">   
+	<script type="module" src="app.js"></script>
+
+</head>
+
+<body>
+	
+<div class="ribbon-wrapper">
+    <div class="ribbon">no API <br> just <a href="https://edu.yovisto.com/sparql" target="_blank">SPARQL</a></div>
+</div>
+  	<h1>
+        ITsJOINTLY / WLO Knowledge Graph
+    </h1>
+
+    <div>
+        
+Willkommen beim WLO Wissengraphen.
+
+Der WLO Wissengraphen ist ein RDF/OWL-basierter Wissensgraph für die Open Educational Resource (OER)-Plattform Wir Lenen Online. Der Wissengraph wurde im Rahmen des ITsJOINTLY Projektes entwickelt. Er dient dazu, Bildungsinhalte für Schulen strukturiert, vernetzt und maschinenlesbar bereitzustellen. Ziel ist es, die Nutzung und das Wiederauffinden von hochwertigen, offenen Lernmaterialien für Lehrende und Lernende zu erleichtern. Dieser Einführungstext gibt eine Übersicht über den Aufbau und die Funktionsweise des Wissensgraphen sowie über die verwendeten Kernkonzepte des Semantic Web, die ihn ermöglichen.
+
+<h2>RDF – Die Basisstruktur des Wissensgraphen</h2>
+
+RDF (Resource Description Framework) bildet das Fundament des Wissensgraphen. In RDF wird Wissen in Form von sogenannten Tripeln gespeichert, die jeweils aus einem Subjekt, einem Prädikat und einem Objekt bestehen. Ein Beispiel für ein RDF-Tripel in unserem Wissensgraphen könnte sein: „Lernressource A hat Thema ‚Mathematik‘“. Solche Tripel ermöglichen es, Informationen einfach zu verknüpfen und dadurch Wissensnetze zu schaffen. Jeder Teil eines Tripels ist dabei durch eine URI (Uniform Resource Identifier) eindeutig gekennzeichnet, was Verwechslungen ausschließt und Interoperabilität zwischen verschiedenen Systemen unterstützt.
+
+<h2>OWL – Die Ontologie zur Definition von Beziehungen</h2>
+
+OWL (Web Ontology Language) baut auf RDF auf und erlaubt es, komplexe Beziehungen und Hierarchien zwischen den verschiedenen Bildungsinhalten festzulegen. Eine Ontologie definiert dabei das Vokabular und die Regeln, mit denen die Bildungsressourcen beschrieben und miteinander in Beziehung gesetzt werden können. Beispielsweise könnte in einer OWL-Ontologie definiert sein, dass eine "Lernressource" entweder eine "Aufgabe" oder ein "Lehrplan-Dokument" sein kann und dass jedes Lehrplan-Dokument einem bestimmten Bildungsziel zugeordnet ist. Durch diese semantische Struktur lassen sich Zusammenhänge zwischen verschiedenen Ressourcen und Bildungsstufen logisch abbilden und gezielt für die Suche und Empfehlung nutzen.
+
+<h2>SPARQL – Abfragen von Informationen</h2>
+
+SPARQL ist die Abfragesprache für RDF-basierte Wissensgraphen. Sie ermöglicht es, spezifische Informationen oder Beziehungen in unserem OER-Wissensgraphen abzurufen, etwa alle verfügbaren Mathematik-Ressourcen für die Sekundarstufe I. Dadurch wird der Wissensgraph durchsuchbar und Nutzer können gezielt Bildungsinhalte finden, die ihren Lernbedürfnissen entsprechen.
+
+<h2>SKOS – Vokabulare und Kategorisierung</h2>
+
+Um eine einheitliche und nachvollziehbare Kategorisierung von Themengebieten zu ermöglichen, kann SKOS (Simple Knowledge Organization System) eingesetzt werden. SKOS erlaubt es, kontrollierte Vokabulare und Taxonomien zu entwickeln, etwa für Fächer, Klassenstufen oder Lernziele. So wird sichergestellt, dass gleiche Begriffe überall konsistent verwendet werden, was die Auffindbarkeit und das Verständnis der Inhalte verbessert.
+
+<h2>Warum ein WLO Wissensgraph?</h2>
+
+Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschiedne Vorteile:
+<ul>
+<li><b>Interoperabilität und Austauschbarkeit:</b> Durch die Verwendung offener Standards wie RDF und OWL ist der Wissensgraph interoperabel und kann leicht mit anderen Systemen und Datenquellen (z.B. Wikidata, DBpedia) verknüpft werden.</li>
+
+<li><b>Skalierbarkeit und Erweiterbarkeit:</b> Neue Themen, Fächer oder Inhalte lassen sich leicht in das vorhandene Wissensnetz einfügen.</li>
+
+<li><b>Automatisierung und Empfehlungen:</b> Die Plattform kann auf Basis der Wissensgraphen-Struktur automatisierte Empfehlungen anbieten die über eine traditionelle Suchfunktion hinaus gehen.</li>
+<ul>
+
+</div>
+
+
+<div>
+<h2> Los geht mit einer ersten Abfrage:</h2>
+
+Zeige 50 Dokumente und ihren Titel:
+
+<div id="yasgui1"></div>
+<script>
+    const url = window.location.href.endsWith('/') ? window.location.href.slice(0, -1) : window.location.href;
+    yasgui = new Yasgui(document.getElementById("yasgui1"), {
+        requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+        endpointCatalogueOptions: {
+            getData: function () {
+                return [
+                    { endpoint: "https://edu.yovisto.com/sparql2" },
+                ];
+            },
+            keys: [],
+        }
+    });
+
+yasgui.getTab().yasqe.setValue(`PREFIX schema: <https://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?doc ?label WHERE {
+  ?doc a <https://schema.org/CreativeWork> .
+  ?doc schema:name ?label .
+} LIMIT 50
+ `);
+
+
+</script>
+
+
+
+
+</div>
+
+
+<div class="footer">
+  <p>created with <a href="https://www.wikidata.org/wiki/Q316"><span>&#10084;</span></a> for <a href="https://its.jointly.info/">ITsJOINTLY</a> by <a href="https://yovisto.com">yovisto.com</a> </p>
+  <img src="https://its.jointly.info/wp-content/uploads/sites/32/2023/09/logos_horizontal-3.svg"><br>
+  <a href="https://yovisto.com/de/impressum/">Imprint</a>
+</div>
+</body>
+
+</html>
