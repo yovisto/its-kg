@@ -69,12 +69,10 @@ h2{
 </style>
 <head>
     <script src="jquery-3.7.1.min.js"></script>
-	<link rel="stylesheet" href="https://unpkg.com/@triply/yasgui@4/build/yasgui.min.css" media="all">
+	<link rel="stylesheet" href="styles.css">   
+	<script type="module" src="app.js"></script>    
+    <link rel="stylesheet" href="https://unpkg.com/@triply/yasgui@4/build/yasgui.min.css" media="all">
     <script src="https://unpkg.com/@triply/yasgui@4/build/yasgui.min.js"></script>
-
-    <link rel="stylesheet" href="styles.css">   
-	<script type="module" src="app.js"></script>
-
 </head>
 
 <body>
@@ -123,45 +121,29 @@ Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschi
 
 
 <div>
-<h2> Los geht mit einer ersten Abfrage:</h2>
+<h2> Los geht's mit ein paar Beispielabfragen:</h2>
 
-Zeige 50 Dokumente und ihren Titel:
+<div class="tab-container-kg">
+    <div class="tab-kg" data-target="#content1">Ersten 50 Dokumente und ihren Titel</div>
+    <div class="tab-kg" data-target="#content2">Alle Lehrpläne für Berlin</div>
+    <div class="tab-kg" data-target="#content3">Alle Lehrpläne für Fach Latein</div>
+</div>
 
-<div id="yasgui1"></div>
-<script>
-    const url = window.location.href.endsWith('/') ? window.location.href.slice(0, -1) : window.location.href;
-    yasgui = new Yasgui(document.getElementById("yasgui1"), {
-        requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
-        endpointCatalogueOptions: {
-            getData: function () {
-                return [
-                    { endpoint: "https://edu.yovisto.com/sparql2" },
-                ];
-            },
-            keys: [],
-        }
-    });
-
-yasgui.getTab().yasqe.setValue(`PREFIX schema: <https://schema.org/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?doc ?label WHERE {
-  ?doc a <https://schema.org/CreativeWork> .
-  ?doc schema:name ?label .
-} LIMIT 50
- `);
-
-
-</script>
-
-
-
+<div class="tab-content-kg active" id="content1">
+    <div id="yasgui1"></div>
+</div>
+<div class="tab-content-kg active" id="content2">
+    <div id="yasgui2"></div>
+</div>
+<div class="tab-content-kg active" id="content3">
+    <div id="yasgui3"></div>
+</div>
 
 </div>
 
-
 <div class="footer">
   <p>created with <a href="https://www.wikidata.org/wiki/Q316"><span>&#10084;</span></a> for <a href="https://its.jointly.info/">ITsJOINTLY</a> by <a href="https://yovisto.com">yovisto.com</a> </p>
-  <img src="https://its.jointly.info/wp-content/uploads/sites/32/2023/09/logos_horizontal-3.svg"><br>
+  <!-- <img src="https://its.jointly.info/wp-content/uploads/sites/32/2023/09/logos_horizontal-3.svg"><br> -->
   <a href="https://yovisto.com/de/impressum/">Imprint</a>
 </div>
 </body>
