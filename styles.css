@@ -126,24 +126,28 @@
 .tab-kg {
     padding: 10px 20px;
     margin-right: 5px;
-    background-color: #003366; /* Dark blue */
+    background-color: #003366;
     color: white;
     border: 1px solid #ccc;
     border-bottom: none;
+    border-radius: 10px;
     transition: background-color 0.3s;
 }
 .tab-kg.active {
-    background-color: #87CEFA; /* Light blue for active tab */
+    background-color: #87CEFA;
     color: black;
+    border-bottom: 1px solid #87CEFA;
+    border-radius: 10px 10px 0 0;
 }
 .tab-content-kg {
-    display: none; /* Hide all contents by default */
+    display: none;
     padding: 20px;
     border: 1px solid #ccc;
     background-color: #fff;
+    border-radius: 0 10px 10px 10px; 
 }
 .tab-content-kg.active {
-    display: block; /* Show only active content */
+    display: block;
 }
 
 

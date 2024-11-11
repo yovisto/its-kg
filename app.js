@@ -11,12 +11,13 @@ $(document).ready(function(){
             keys: [],
         }
     });
-    yasgui.getTab().yasqe.setValue(`PREFIX schema: <https://schema.org/>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    SELECT ?doc ?label WHERE {
+    yasgui.getTab().yasqe.setValue(`
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?doc ?label WHERE {
     ?doc a <https://schema.org/CreativeWork> .
     ?doc schema:name ?label .
-    } LIMIT 50
+} LIMIT 50
      `);
     
     const yasgui2 = new Yasgui(document.getElementById("yasgui2"), {
@@ -31,45 +32,31 @@ $(document).ready(function(){
         }
     });
     yasgui2.getTab().yasqe.setValue(`
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-select distinct * where 
+select distinct * where {
 {
-    ?Curriculum a <https://w3id.org/lehrplan/ontology/LP_00000438> . 
-    ?Curriculum <https://w3id.org/lehrplan/ontology/LP_00000029><https://w3id.org/lehrplan/ontology/LP_30000048> . 
-    ?Curriculum rdfs:label ?Beschreibung 
+    optional {?doc <https://schema.org/name> ?title .}
+    optional {?doc <http://purl.org/dc/terms/title> ?title .}
+    ?doc <https://schema.org/description> ?description .
+    filter regex(?description, "bismarck", "i")
 }
+union
+{
+    optional {?doc <https://schema.org/name> ?title .}
+    optional {?doc <http://purl.org/dc/terms/title> ?title .}
+    ?doc <https://schema.org/description> ?description .
+    filter regex(?title, "bismarck", "i")
+}
+
+} LIMIT 10
      `);
      
-    const yasgui3 = new Yasgui(document.getElementById("yasgui3"), {
-        requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
-        ensdpointCatalogueOptions: {
-            getData: function () {
-                return [
-                    { endpoint: "https://edu.yovisto.com/sparql2" },
-                ];
-            },
-            keys: [],
-        }
-    });
-    yasgui3.getTab().yasqe.setValue(`
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-select distinct ?Curriculum ?Beschreibung ?Bundesland where 
-{
-    ?Curriculum a <https://w3id.org/lehrplan/ontology/LP_00000438> . 
-    ?Curriculum <https://w3id.org/lehrplan/ontology/LP_00000029> ?bl . 
-    ?Curriculum rdfs:label ?Beschreibung . 
-    ?bl rdfs:label ?Bundesland . 
-    FILTER(CONTAINS(LCASE(?Beschreibung), "latein"))
-}
-     `); 
 
     $('.tab-kg, .tab-content-kg').removeClass('active');
-
+    $('#container1').addClass('active');
+    $($('#container1').data('target')).addClass('active');
+    
     $('.tab-kg').click(function(){
-        // Remove 'active' class from all tabs and contents
         $('.tab-kg, .tab-content-kg').removeClass('active');
-        
-        // Add 'active' class to the clicked tab and corresponding content
         $(this).addClass('active');
         $($(this).data('target')).addClass('active');
     });   
