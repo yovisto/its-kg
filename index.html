@@ -36,10 +36,6 @@ img {
     max-height:200px;
 }
 
-h2{
-    font-size: 1.25em;
-}
-
 
 .ribbon-wrapper {
   width: 115px;
@@ -84,30 +80,33 @@ h2{
         ITsJOINTLY / WLO Knowledge Graph
     </h1>
 
-    <div>
-        
+    
+<div>
 Willkommen beim WLO Wissengraphen.
+</div>        
 
+<h2>Knowledge Graphs - Einführung</h2>
+<div>
 Der WLO Wissengraphen ist ein RDF/OWL-basierter Wissensgraph für die Open Educational Resource (OER)-Plattform Wir Lenen Online. Der Wissengraph wurde im Rahmen des ITsJOINTLY Projektes entwickelt. Er dient dazu, Bildungsinhalte für Schulen strukturiert, vernetzt und maschinenlesbar bereitzustellen. Ziel ist es, die Nutzung und das Wiederauffinden von hochwertigen, offenen Lernmaterialien für Lehrende und Lernende zu erleichtern. Dieser Einführungstext gibt eine Übersicht über den Aufbau und die Funktionsweise des Wissensgraphen sowie über die verwendeten Kernkonzepte des Semantic Web, die ihn ermöglichen.
 
-<h2>RDF – Die Basisstruktur des Wissensgraphen</h2>
+<h3>RDF – Die Basisstruktur des Wissensgraphen</h3>
 
 RDF (Resource Description Framework) bildet das Fundament des Wissensgraphen. In RDF wird Wissen in Form von sogenannten Tripeln gespeichert, die jeweils aus einem Subjekt, einem Prädikat und einem Objekt bestehen. Ein Beispiel für ein RDF-Tripel in unserem Wissensgraphen könnte sein: „Lernressource A hat Thema ‚Mathematik‘“. Solche Tripel ermöglichen es, Informationen einfach zu verknüpfen und dadurch Wissensnetze zu schaffen. Jeder Teil eines Tripels ist dabei durch eine URI (Uniform Resource Identifier) eindeutig gekennzeichnet, was Verwechslungen ausschließt und Interoperabilität zwischen verschiedenen Systemen unterstützt.
 
-<h2>OWL – Die Ontologie zur Definition von Beziehungen</h2>
+<h3>OWL – Die Ontologie zur Definition von Beziehungen</h3>
 
 OWL (Web Ontology Language) baut auf RDF auf und erlaubt es, komplexe Beziehungen und Hierarchien zwischen den verschiedenen Bildungsinhalten festzulegen. Eine Ontologie definiert dabei das Vokabular und die Regeln, mit denen die Bildungsressourcen beschrieben und miteinander in Beziehung gesetzt werden können. Beispielsweise könnte in einer OWL-Ontologie definiert sein, dass eine "Lernressource" entweder eine "Aufgabe" oder ein "Lehrplan-Dokument" sein kann und dass jedes Lehrplan-Dokument einem bestimmten Bildungsziel zugeordnet ist. Durch diese semantische Struktur lassen sich Zusammenhänge zwischen verschiedenen Ressourcen und Bildungsstufen logisch abbilden und gezielt für die Suche und Empfehlung nutzen.
 
-<h2>SPARQL – Abfragen von Informationen</h2>
+<h3>SPARQL – Abfragen von Informationen</h3>
 
 SPARQL ist die Abfragesprache für RDF-basierte Wissensgraphen. Sie ermöglicht es, spezifische Informationen oder Beziehungen in unserem OER-Wissensgraphen abzurufen, etwa alle verfügbaren Mathematik-Ressourcen für die Sekundarstufe I. Dadurch wird der Wissensgraph durchsuchbar und Nutzer können gezielt Bildungsinhalte finden, die ihren Lernbedürfnissen entsprechen.
 
-<h2>SKOS – Vokabulare und Kategorisierung</h2>
+<h3>SKOS – Vokabulare und Kategorisierung</h3>
 
 Um eine einheitliche und nachvollziehbare Kategorisierung von Themengebieten zu ermöglichen, kann SKOS (Simple Knowledge Organization System) eingesetzt werden. SKOS erlaubt es, kontrollierte Vokabulare und Taxonomien zu entwickeln, etwa für Fächer, Klassenstufen oder Lernziele. So wird sichergestellt, dass gleiche Begriffe überall konsistent verwendet werden, was die Auffindbarkeit und das Verständnis der Inhalte verbessert.
 
-<h2>Warum ein WLO Wissensgraph?</h2>
 
+<h2>Was ist der WLO Knowledge Graph</h2>
 Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschiedne Vorteile:
 <ul>
 <li><b>Interoperabilität und Austauschbarkeit:</b> Durch die Verwendung offener Standards wie RDF und OWL ist der Wissensgraph interoperabel und kann leicht mit anderen Systemen und Datenquellen (z.B. Wikidata, DBpedia) verknüpft werden.</li>
@@ -116,12 +115,10 @@ Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschi
 
 <li><b>Automatisierung und Empfehlungen:</b> Die Plattform kann auf Basis der Wissensgraphen-Struktur automatisierte Empfehlungen anbieten die über eine traditionelle Suchfunktion hinaus gehen.</li>
 <ul>
-
 </div>
 
-
 <div>
-<h2> Los geht's mit ein paar Beispielabfragen:</h2>
+<h3> Los geht's mit ein paar Beispielabfragen:</h3>
 
 <div class="tab-container-kg">
     <div id="container1" class="tab-kg" data-target="#content1">Ersten 50 Dokumente und ihren Titel</div>
@@ -136,6 +133,12 @@ Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschi
 </div>
 
 </div>
+
+<h2>Annotationen in Knowledge Graphs</h2>
+
+<h2>Anwendungsbereiche von Annotationen</h2>
+
+<h2>Ausblick</h2>
 
 <div class="footer">
   <p>created with <a href="https://www.wikidata.org/wiki/Q316"><span>&#10084;</span></a> for <a href="https://its.jointly.info/">ITsJOINTLY</a> by <a href="https://yovisto.com">yovisto.com</a> </p>
