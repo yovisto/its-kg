@@ -1,4 +1,5 @@
 <html>
+<meta charset="UTF-8"> 
 <link rel="stylesheet" href="https://unpkg.com/chota@latest">
 <style>
     :root {
@@ -19,6 +20,7 @@
 }
 body {
     padding: 50px 50px 150px 50px;
+    margin-left: 60px;
 }
 
 .footer {
@@ -31,9 +33,14 @@ body {
   text-align: center;
 }
 
-img {
-    max-width:200px;
-    max-height:200px;
+.standard {
+    max-width:800px;
+    max-height:800px;
+    padding: 40px;
+}
+
+p, li {
+    max-width: 1200px;
 }
 
 
@@ -44,7 +51,8 @@ img {
   position: absolute;
   top: -3px;
   left: 3px;
-  .ribbon {
+}
+.ribbon {
     font: bold 15px sans-serif;
     color: #333;
     text-align: center;
@@ -60,6 +68,9 @@ img {
     background-color: #ebb134;
     color: #fff;
   }
+
+
+
 }
 
 </style>
@@ -82,43 +93,196 @@ img {
 
     
 <div>
-Willkommen beim WLO Wissengraphen.
+Willkommen beim WLO Knowledge Graph (WLOKG).
 </div>        
 
-<h2>1. Knowledge Graphs - Einführung</h2>
+
+
+<h2>1. Wissensgraphen - Eine ganz kurze Einführung</h2>
 <div>
-Der WLO Wissengraphen ist ein RDF/OWL-basierter Wissensgraph für die Open Educational Resource (OER)-Plattform Wir Lenen Online. Der Wissengraph wurde im Rahmen des ITsJOINTLY Projektes entwickelt. Er dient dazu, Bildungsinhalte für Schulen strukturiert, vernetzt und maschinenlesbar bereitzustellen. Ziel ist es, die Nutzung und das Wiederauffinden von hochwertigen, offenen Lernmaterialien für Lehrende und Lernende zu erleichtern. Dieser Einführungstext gibt eine Übersicht über den Aufbau und die Funktionsweise des Wissensgraphen sowie über die verwendeten Kernkonzepte des Semantic Web, die ihn ermöglichen.
+
+<p>
+Der WLO Knowledge Graph ist ein RDF/OWL-basierter Wissensgraph für die Open Educational Resource (OER)-Plattform Wir Lenen Online. Der Wissengraph wurde im Rahmen des ITsJOINTLY Projektes entwickelt. Er dient dazu, Bildungsinhalte für Schulen strukturiert, vernetzt und maschineninterpretierbar bereitzustellen. Ziel ist es, die Nutzung und das Wiederauffinden von hochwertigen, offenen Lernmaterialien für Lehrende und Lernende zu erleichtern. Dieser Einführungstext gibt eine Übersicht über den Aufbau und die Funktionsweise des Wissensgraphen sowie über die verwendeten Kernkonzepte des Semantic Web, die ihn ermöglichen.
+</p>
 
 <h3>RDF – Die Basisstruktur des Wissensgraphen</h3>
 
-RDF (Resource Description Framework) bildet das Fundament des Wissensgraphen. In RDF wird Wissen in Form von sogenannten Tripeln gespeichert, die jeweils aus einem Subjekt, einem Prädikat und einem Objekt bestehen. Ein Beispiel für ein RDF-Tripel in unserem Wissensgraphen könnte sein: „Lernressource A hat Thema ‚Mathematik‘“. Solche Tripel ermöglichen es, Informationen einfach zu verknüpfen und dadurch Wissensnetze zu schaffen. Jeder Teil eines Tripels ist dabei durch eine URI (Uniform Resource Identifier) eindeutig gekennzeichnet, was Verwechslungen ausschließt und Interoperabilität zwischen verschiedenen Systemen unterstützt.
+<p>
+RDF (Resource Description Framework) bildet das Fundament des Wissensgraphen. In RDF wird Wissen in Form von sogenannten Tripeln gespeichert, die jeweils aus einem Subjekt, einem Prädikat und einem Objekt bestehen. Ein Beispiel für ein RDF-Tripel in unserem Wissensgraphen könnte sein: „Lernressource A hat Thema ‚Mathematik‘“. Solche Tripel ermöglichen es, Informationen einfach zu verknüpfen und dadurch Wissensnetze zu schaffen. Jeder Teil eines Tripels ist dabei durch eine URI (Uniform Resource Identifier) eindeutig gekennzeichnet, was Verwechslungen ausschließt und Interoperabilität zwischen verschiedenen Systemen unterstützt. Siehe: <a href="https://www.w3.org/TR/rdf11-concepts/" target="_blank">RDF-Spezifikation</a>
+</p>
 
-<h3>OWL – Die Ontologie zur Definition von Beziehungen</h3>
+<h3>OWL – Ontologien zur Definition von Beziehungen</h3>
 
-OWL (Web Ontology Language) baut auf RDF auf und erlaubt es, komplexe Beziehungen und Hierarchien zwischen den verschiedenen Bildungsinhalten festzulegen. Eine Ontologie definiert dabei das Vokabular und die Regeln, mit denen die Bildungsressourcen beschrieben und miteinander in Beziehung gesetzt werden können. Beispielsweise könnte in einer OWL-Ontologie definiert sein, dass eine "Lernressource" entweder eine "Aufgabe" oder ein "Lehrplan-Dokument" sein kann und dass jedes Lehrplan-Dokument einem bestimmten Bildungsziel zugeordnet ist. Durch diese semantische Struktur lassen sich Zusammenhänge zwischen verschiedenen Ressourcen und Bildungsstufen logisch abbilden und gezielt für die Suche und Empfehlung nutzen.
+<p>
+OWL (Web Ontology Language) baut auf RDF auf und erlaubt es, komplexe Beziehungen und Hierarchien zwischen den verschiedenen Bildungsinhalten festzulegen. Eine Ontologie definiert dabei das Vokabular und die Regeln, mit denen die Bildungsressourcen beschrieben und miteinander in Beziehung gesetzt werden können. Beispielsweise könnte in einer OWL-Ontologie definiert sein, dass eine "Lernressource" entweder eine "Aufgabe" oder ein "Lehrplan-Dokument" sein kann und dass jedes Lehrplan-Dokument einem bestimmten Bildungsziel zugeordnet ist. Durch diese semantische Struktur lassen sich Zusammenhänge zwischen verschiedenen Ressourcen und Bildungsstufen logisch abbilden und gezielt für die Suche und Empfehlung nutzen. Siehe: <a href="https://www.w3.org/TR/owl2-overview/" target="_blank">OWL 2 Web Ontology Language </a>
+</p>
 
 <h3>SPARQL – Abfragen von Informationen</h3>
 
-SPARQL ist die Abfragesprache für RDF-basierte Wissensgraphen. Sie ermöglicht es, spezifische Informationen oder Beziehungen in unserem OER-Wissensgraphen abzurufen, etwa alle verfügbaren Mathematik-Ressourcen für die Sekundarstufe I. Dadurch wird der Wissensgraph durchsuchbar und Nutzer können gezielt Bildungsinhalte finden, die ihren Lernbedürfnissen entsprechen.
+<p>
+SPARQL ist die Abfragesprache für RDF-basierte Wissensgraphen. Sie ermöglicht es, spezifische Informationen oder Beziehungen im WLO Wissensgraphen abzurufen, etwa alle verfügbaren Mathematik-Ressourcen für die Sekundarstufe I. Dadurch wird der Wissensgraph durchsuchbar und Nutzer können gezielt Bildungsinhalte finden, die ihren Lernbedürfnissen entsprechen. Siehe <a href="https://www.w3.org/TR/sparql11-query/" target="_blank">SPARQL Abfragesprache</a>
+</p>
 
-<h3>SKOS – Vokabulare und Kategorisierung</h3>
+<h2>2. Was ist der WLO Knowledge Graph</h2> 
 
-Um eine einheitliche und nachvollziehbare Kategorisierung von Themengebieten zu ermöglichen, kann SKOS (Simple Knowledge Organization System) eingesetzt werden. SKOS erlaubt es, kontrollierte Vokabulare und Taxonomien zu entwickeln, etwa für Fächer, Klassenstufen oder Lernziele. So wird sichergestellt, dass gleiche Begriffe überall konsistent verwendet werden, was die Auffindbarkeit und das Verständnis der Inhalte verbessert.
+<p>
+Der WLO Knowledge Graph wird aus den Metadaten der Inhalte der WLO Plattform automatisch generiert. Das Update erfolgt in regelmäßigen Abständen (aktuell einmal wöchentlich). Zusätzlich werden auch andere Ressourcen in den Wissensgraphen importiert. Hierzu zählen zum Beispiel relevante Teile aus Wikidata, verschiedene kontrollierte Vokabulare (zum Beispiel von der DINI AG KIM, GND, Wordnet), Kompetenz Frameworks wie ESCO, Lehrplandaten oder die EAF-Systematiken. 
+</p>
 
-
-<h2>2. Was ist der WLO Knowledge Graph</h2>
-Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschiedne Vorteile:
-<ul>
-<li><b>Interoperabilität und Austauschbarkeit:</b> Durch die Verwendung offener Standards wie RDF und OWL ist der Wissensgraph interoperabel und kann leicht mit anderen Systemen und Datenquellen (z.B. Wikidata, DBpedia) verknüpft werden.</li>
-
-<li><b>Skalierbarkeit und Erweiterbarkeit:</b> Neue Themen, Fächer oder Inhalte lassen sich leicht in das vorhandene Wissensnetz einfügen.</li>
-
-<li><b>Automatisierung und Empfehlungen:</b> Die Plattform kann auf Basis der Wissensgraphen-Struktur automatisierte Empfehlungen anbieten die über eine traditionelle Suchfunktion hinaus gehen.</li>
-<ul>
-</div>
+<p>
+Die im WLO Knowledge Graph zusammengestellten Daten können anschließend durch verschiedene Anwendungen abgefragt und verwendet werden. Hierzu zählen unter anderem Empfehlungssysteme, semantische Suche oder Lernpfade.
+</p>
 
 <div>
-<h3>Los geht's mit ein paar Beispielabfragen:</h3>
+<img class="standard" src="kg-images/kg-images - page 1.svg">
+</div>
+
+<p>
+Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschiedene Vorteile: 
+</p>
+
+<p>
+<ul> <li><b>Interoperabilität und Austauschbarkeit:</b> Durch die Verwendung offener Standards wie RDF und OWL ist der Wissensgraph interoperabel und kann leicht mit anderen Systemen und Datenquellen (z.B. Wikidata, DBpedia, Normdaten, etc.) verknüpft werden.</li> 
+
+<li><b>Skalierbarkeit und Erweiterbarkeit:</b> Neue Themen, Fächer oder Inhalte lassen sich leicht in das vorhandene Wissensnetz einfügen.</li> 
+
+<li><b>Automatisierung und Empfehlungen:</b> Die Plattform kann auf Basis der Wissensgraphen-Struktur automatisierte Empfehlungen anbieten, die über eine traditionelle Suchfunktion hinausgehen, z.B. thematisch relevante Inhalte.</li> 
+
+<li><b>Verbesserte Suchbarkeit und Kontextualisierung:</b> Durch die semantische Verknüpfung von Begriffen und Konzepten können Benutzer in angeschlossenen Systemen schneller relevante Informationen finden, die durch ihre Bedeutung und nicht nur durch Schlüsselwörter definiert sind.</li> 
+
+<li><b>Transparenz und Nachvollziehbarkeit:</b> Der Wissensgraph ermöglicht eine nachvollziehbare Darstellung von Verbindungen, Quellen und Empfehlungen, was die Transparenz und das Vertrauen in die bereitgestellten Inhalte erhöht.</li> 
+
+<li><b>Multidimensionale Analyse:</b> Der Wissensgraph erlaubt eine vielschichtige Analyse von Inhalten, sodass Trends, Wissenslücken und Zusammenhänge auf verschiedenen Ebenen untersucht werden können.</li> 
+
+<li><b>Integration von maschinellem Lernen und KI:</b> Der Wissensgraph bildet eine ideale Grundlage für den Einsatz von KI-Algorithmen, die neue Erkenntnisse aus bestehenden Daten ableiten oder verborgene Zusammenhänge entdecken können.</li> 
+
+</ul>
+</p>
+
+<p>
+Es gibt zahlreiche Anwendungsszenarien, auf die wir im Verlauf dieses Dokuments eingehen werden.
+</p>
+
+</div>
+
+<h3>Wie ist der Wissengraph aufgebaut?</h3>
+
+<p>Zunächst müssen wir einen kleinen Ausflug in die Welt von RDF machen. </p>
+
+<p>In RDF werden alle "Dinge" durch einen <i>International Resource Identifier</i> (IRI) repräsentiert. Diese IRIs können dann in Form eines Tripels einen konkreten Fakt ausdrücken. Z.B: 
+<p>
+
+<b>
+&nbsp;&nbsp;&nbsp; https://dbpedia.org/page/Albert_Einstein 
+&nbsp;&nbsp;&nbsp; http://dbpedia.org/ontology/birthPlace 
+&nbsp;&nbsp;&nbsp; http://dbpedia.org/resource/Ulm .
+</b>
+
+</p>
+
+<p>
+In diesem Beispiel aus der DBpedia wird ausgedrückt, dass Albert Einstein in Ulm geboren wurde. 
+Die drei Elemente werden üblicherweise als <b>Subjekt Prädikat</b> und <b>Objekt</b> bezeichnet. Eben genau wie ein einfacher Satz.
+
+Die genaue Bedeutung des Prädikats "birthPlace" wird in der DBpedia Ontologie beschrieben. Es ist üblich, dass die IRIs im Browser aufgerufen werden können. Dort ist dann weitere Information verfügbar, wie eben z.B. die ontologische Beschreibung dessen, was der IRI repräsentiert, z.B.: <b>http://dbpedia.org/ontology/birthPlace</b>
+</p>
+
+
+<p>
+Nicht immer sind die IRIs wie im obigen Beispiel "lesbar". Manchmal enthalten sie nur eine ID und die eigentliche Bedeutung muss dann erst nachgeschlagen werden. Z.B.: <b>http://purl.obolibrary.org/obo/GSSO_000004</b> .
+</p>
+
+<p>
+Unter anderem aus diesem Grund können auch sogenannte <b>Literale</b> als Objekt verwendet werden. Literale enthalten einfache Daten, die in Form der üblichen Datentypen (z.B. String, Integer, etc.) hinterlegt werden. Das kann z.B. die Beschreibung oder ein Titel dessen sein, wofür der IRI steht.
+</p>
+<p>
+    &nbsp;&nbsp;&nbsp;<b>http://purl.obolibrary.org/obo/GSSO_000004</b> &nbsp;&nbsp;&nbsp;<b>http://www.w3.org/2000/01/rdf-schema#label</b> &nbsp;&nbsp;&nbsp;<b>"birthday" .</b><br>
+    &nbsp;&nbsp;&nbsp;<b>http://purl.obolibrary.org/obo/GSSO_000004</b> &nbsp;&nbsp;&nbsp;<b>http://purl.obolibrary.org/obo/IAO_0000115</b> &nbsp;&nbsp;&nbsp;<b>"The anniversary of the day on which someone is born." .</b><br>
+    &nbsp;&nbsp;&nbsp;<b>http://purl.obolibrary.org/obo/IAO_0000115</b> &nbsp;&nbsp;&nbsp;<b>http://www.w3.org/2000/01/rdf-schema#label</b> &nbsp;&nbsp;&nbsp;<b>"definition" .</b>
+
+<br><br>
+Die Bedeutung der einzelnen IRIs kann also auch wieder durch Tripel beschrieben werden. Das erinnert irgendwie an ein "rekursives" System. Doch wo beginnt alles?
+<br><br>
+Die Basis ist eben genau durch den RDF Standard vorgegeben. Dort ist festgelegt, das z.B. der IRI <b>http://www.w3.org/2000/01/rdf-schema#label</b> bedeutet, dass das Literal als Objekt den Titel dessen enthält, was das Subjekt repräsentiert. 
+Es gibt natürlich noch zahlreiche weitere vorgegebene Bedeutungen die im RDF Standard nachgelesen werden können.
+</p>
+<p>
+Mit RDF können sehr komplexe Zusammenhänge dargestellt werden. Das besondere ist, dass die Möglichkeiten der darstellbaren Zusammenhänge einer mathematischen Logik unterliegen. Deshalb können unter bestimmten Voraussetzungen auch Schlussfolgerungen aus den Daten gezogen werden. Dennoch gibt es Grenzen. RDF hat diesbezüglich nur beschränkte Möglichkeiten. So können z.B. keine Inkosistenzen festgestellt werden. Hier kommt OWL in Spiel. Mit OWL lassen sich noch genauere und logisch fundiertere Zusammenhänge beschreiben. Aber dies führt an dieser Stelle zu weit.
+
+</p>
+<p>
+Nun zurück zu WLO:
+<br>
+</p>
+<p>
+Mit dem folgenden IRI wird im Knowledge Graph ein bestimmtes Dokument aus der WLO Plattform repräsentiert:
+</p>
+<p>
+<b>https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e</b>
+</p>
+
+<p>
+Klickt man darauf, erhält man die Informationen, die zu diesem Objekt in unserem Knowledge Graph bekannt sind. 
+Oben steht das Subjekt und dann kommen die Prädikate mit den Objekten. 
+</p>
+
+<p>
+Zur Darstellung wird hier eine Software namens LodView verwendet. Die eigentlichen RDF Daten befinden sich in einem Triplestore. Dies ist einen spezielle Datenbank, die optimiert ist, RDF Tripel zu verarbeiten. Konkret verwenden wir den Virtuoso Triplestore. LodView ist also eine Anwendung zur Visualiserung der RDF Daten, die an unseren Triplestore angeschlossen ist.
+</p>
+
+<p>
+Um die konreten Tripel zum obigen IRI zu erhalten kann man den "?output=text%2Fplain" Paramter an den IRI anhängen:
+</p>
+
+<p>
+<b>https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e?output=text%2Fplain</b> 
+</p>
+
+<p>
+LodView liefert dann die Tripel entsprechend als Textdatei zurück. Diese ist allerdings nicht so gut lesbar, wie die Darstellung in Lodview, dennoch kann diese Textdatei von Programmen die RDF unterstützen weiter verarbeitet werden. 
+LodView kann die Daten also <b>"menschenlesbar"</b> in Form einer Webseite oder <b>"maschineninterpretierbar"</b> in Form einer Textdatei mit Tripeln ausliefern.
+</p>
+
+<p> Doch wie kommt LodView eigentlich an die Daten ran?<p>
+
+<p>So ziemlich jeder RDF Tripelstore bietet eine SPARQL Schnittstelle an, mit der die Daten abgerufen werden können. 
+SPARQL steht für "SPARQL Protocol And RDF Query Language". Es ist eine formale Abfragesprache mit der Anfragen an den Triplestore gestellt werden können, der dann entsprechend mit Daten antwortet. <p>
+
+<p>Ein Beispiel:</p>
+
+<p>
+SELECT ?l WHERE {
+    <br>
+    &lthttps://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt &lthttps://schema.org/description&gt ?l .
+
+    <br> 
+}
+</p>
+
+<p>Hierbei steht <b>?l</b> für eine freie Variable, für die im Triplestore konkrete Werte gesucht werden. D.h. die Anfrage gibt alle Objekte der Tripel zurück, deren Subjekt https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e und Prädikat https://schema.org/description ist. 
+</p>
+
+<p>
+    Die Anfrage kann im sogenannten SPARQL Endpoint des Triplestores eingegeben werden. Für unseren Virtuoso ist das <a href="https://edu.yovisto.com/sparql2" target="_blank">https://edu.yovisto.com/sparql2</a>.
+</p>
+<p>
+    Dort kann man diese Anfrage also <a href="https://edu.yovisto.com/sparql2?default-graph-uri=&qtxt=SELECT+%3Fl+WHERE+{%0D%0A<https%3A%2F%2Fedu.yovisto.com%2Fwlo%2Fresource%2Fa44c7b05-2a37-455f-a743-312ff064102e>+<https%3A%2F%2Fschema.org%2Fdescription>+%3Fl+.%0D%0A}+&format=text%2Fhtml&should-sponge=&timeout=0&signal_void=on" target="_blank">eingeben</a> und absenden. Mit "Results Format" kann das entsprechende Format der Antwort ausgewählt werden.
+</p>
+
+<p>
+Zurück zu LodView. Die LodView Web-Applikation erzeugt also aus dem IRI der im Browser aufgerufen wurde eine Anfrage an den SPARQL-Endpoint des Triplestores, erhält die RDF Daten als Antwort zurück und generiert daraus entweder die Webseite oder die Textdatei mit den Tripeln.
+</p>
+
+<div>
+<img class="standard" src="kg-images/kg-images - page 3.svg">
+</div>
+
+<p> 
+Natürlich können auch andere Apps auf den SPARQL-Endpoint zugreifen. Z.B. sind im folgenden Yasgui-Widget ein paar Beispielanfragen, die an den SPARQL-Endpoint gesendet werden können, vorbereitet.
+</p>
+
+<div>
+<h3>Los geht's:</h3>
 
 <div class="tab-container-kg">
     <div id="container1" class="tab-kg" data-target="#content1">Ersten 50 Dokumente und ihren Titel</div>
@@ -134,17 +298,99 @@ Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschi
 
 </div>
 
+<h3>Struktur der Daten</h3>
+
+<p>
+    Damit man weiss, welche Abfragen man manchen kann, muss man natürlich genau wissen, welche Prädikate im Tripelstore verwendet werden, bzw. welche Objekte und Subjekte überhaupt abgefragt werden könnten. Mit anderen Worten, man muss die "Ontologie" und die Struktur der Daten im Tripelstore kennen. Um diese zu ermitteln gibt es natürlich verschieden Möglichkeiten. Entweder man konsultiert die Dokumentation oder man versucht sie aus den Daten selbst zu ermitteln. Z.B. könnte man sich zunächste alle Prädikate anzeigen lassen. Im nächsten Schritt alle Subjekte die ein Prädikat verwenden, etc. etc. bis man genügend Informationen hat, um die Daten sinnvoll abzufragen. Natürlich ist es am besten, wenn die Daten umfassend dokumentiert sind.
+</p>
+<p>
+    Mit Hilfe von Visualisierung-Tool wie LodView kann man die Struktur der Daten relativ leicht lernen. 
+</p>
+
+<p>
+    Schauen wir nochmal etwas genauer auf die Struktur der Ressource in LodView: <br><br>
+
+    <a href="https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e" target="_blank">https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e</a> <br><br>
+
+    Der Titel der Ressource lautet "Satz des Pythagoras". Lodview zeigt den Titel gut lesbar oben an. Die eigentliche Information steckt im Tripel: <br><br>
+
+    https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e https://schema.org/name "Satz des Pythagoras" . <br><br>
+
+    Dieses Tripel wird etwas weiter unten angezeigt. Um den Titel anzugeben wird also das Prädikat "https://schema.org/name" verwendet. 
+    Auf ähnliche Weise werden auch die folgenden Informationen angezeigt:
+</p>
+
+    <ul>
+    <li>https://schema.org/description : Beschreibung der Ressource</li>
+    <li>https://schema.org/keywords : freie Schlüsselwörter</li>
+    <li>https://schema.org/identifier : der WLO Identifikator (edusharing Plattform)</li>
+    <li>https://schema.org/license : die Lizenz der Ressource</li>
+    <li>https://schema.org/url : der URL der Quelle er Ressource</li>
+    <li>http://edu.yovisto.com/ontology/1.0/dateCreated : Zeitpunkt an dem die Ressource in WLO angelegt wurde</li>
+    <li>http://edu.yovisto.com/ontology/1.0/dateModified : Zeitpunkt er letzen Änderung bei WLO</li>
+    <li>http://www.w3.org/1999/02/22-rdf-syntax-ns#type : Typ der Ressource </li>
+    <li>http://www.w3.org/2000/01/rdf-schema#isDefinedBy : Named Graph, in dem die Ressource im Triplestore gespeichert ist</li>
+    <li>http://xmlns.com/foaf/0.1/depiction : verweist auf ein Bild (dies wird von Lodview oben angezeigt) </li>
+    <li>https://schema.org/audience : verweist auf eine Liste von Nutzer Rollen, für die die Ressource geeignet ist (z.B. für Schüler und/oder Lehrer)</li>
+    <li>https://schema.org/about : zeigt auf eine Liste von Schulfächern</li>
+    <li>http://w3id.org/openeduhub/terms/educationalContext : zeigt auf eine Liste von Schulstufen</li>
+    <li>http://w3id.org/openeduhub/terms/widget : zeigt auf eine Liste von möglichen Darstellungstemplates der WLO Plattform</li> 
+    <li>https://w3id.org/curriculum/hasAnnotationTarget : verweist auf semantische Textannotationen (dazu später mehr)</li>
+    </ul>
+
+<p>
+
+    In manchen Fällen werden die Prädikate auch mit einem Präfix abgekürzt. Z.B wird
+     http://www.w3.org/1999/02/22-rdf-syntax-ns#type mit rdf:type abgekürzt. Die Präfixschreibweise ist etwas übersichtlicher. Prinzipiell kann man das Kürzel des Präfix (z.B. "rdf:") frei wählen. Mache Präfixe werden aber als Konvention immer gleich verwendet, z.B rdf, rdfs, owl, foaf, etc. 
+</p>
+<br><br>
+
+Da wir nun die Struktur eines Dokuments kennen, können wir ein paar weitere komplexere Abfragen machen:
+
+<br><br>
+TODO: yasgui2
+<br>
+
+Zeige die ersten 10 Dokumente. <br>
+
+Wie viele Dokumente gibt es.<br>
+
+Zeige alle Dokumente die "Zelle" im Titel haben.<br>
+
+Zeige alle Dokumente die "Zelle" als Keyword angegeben haben.<br>
+
+Zeige alle Dokumente die "Zelle" im Titel UND als Keyword angegeben haben.<br>
+
+Zeige alle Dokumente die "Zelle" im Titel ODER als Keyword angegeben haben.<br>
+
+Zeige welche Fächer es gibt<br>
+
+Zeige 10 Dokumente des Fach Mathematik<br>
+
+Zeige wie viele Dokumente es zum Fach Mathematik gibt
+<br>
+
+<br><br>
+
+
+</p>
+
+
+
 <h2>3. Annotationen in Knowledge Graphs</h2>
+
+-> Was für Texte lassen sich gut annotieren? (Qualität)
 
 <h2>4. Anwendungsbereiche von Annotationen</h2>
 
 <h2>5. Ausblick</h2>
 
 <div class="footer">
-  <p>created with <a href="https://www.wikidata.org/wiki/Q316"><span>&#10084;</span></a> for <a href="https://its.jointly.info/">ITsJOINTLY</a> by <a href="https://yovisto.com">yovisto.com</a> </p>
-  <img src="https://its.jointly.info/wp-content/uploads/sites/32/2023/09/logos_horizontal-3.svg"><br>
-  <a href="https://yovisto.com/de/impressum/">Imprint</a>
+  <p>created with <a href="https://www.wikidata.org/wiki/Q316"><span>&#10084;</span></a> for <a href="https://its.jointly.info/">ITsJOINTLY</a> by <a href="https://yovisto.com">yovisto.com</a> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://yovisto.com/de/impressum/">Imprint</a> </p>
+  
 </div>
+<br>
+<img src="https://its.jointly.info/wp-content/uploads/sites/32/2023/09/logos_horizontal-3.svg"><br>
 </body>
 
 </html>

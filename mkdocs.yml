@@ -1,0 +1,20 @@
+site_name: WLO Knowledge Graph
+
+#theme: readthedocs
+theme:
+   name: null
+   custom_dir: 'cinder'
+
+extra_css:
+  - yasgui.min.css
+
+extra_javascript:
+  - jquery-3.7.1.min.js
+  - yasgui.min.js
+  - app.js
+
+
+nav:
+  - Home: index.md
+  - Semantische Analyse: annotationen.md
+  
