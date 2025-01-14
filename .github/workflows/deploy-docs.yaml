@@ -1,0 +1,32 @@
+name: deploy docs
+
+on:
+  push:
+    branches:
+    - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: main
+        path: main
+    - name: Build Docs for main
+      run: |
+           pip install mkdocs
+           cd main
+           mkdocs build -f mkdocs.yaml
+
+           cd ..
+           mkdir public
+           cp -r main/site/* public
+           
+    - name: Deploy to GitHub Pages
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v3
+      with:
+        target_branch: gh-pages
+        build_dir: public
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
