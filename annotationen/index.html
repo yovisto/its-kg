@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Semantische Analyse - WLO Knowledge Graph</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+    <link href="../yasgui.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">WLO Knowledge Graph</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Semantische Analyse</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="..">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#semantische-analyse-in-knowledge-graphs">Semantische Analyse in Knowledge Graphs</a></li>
+            <li class="second-level"><a href="#annotationen">Annotationen</a></li>
+                
+            <li class="second-level"><a href="#anwendungsbereiche-von-annotationen">Anwendungsbereiche von Annotationen</a></li>
+                
+                <li class="third-level"><a href="#wikidata">Wikidata</a></li>
+                <li class="third-level"><a href="#wordnet">WordNet</a></li>
+            <li class="second-level"><a href="#qualitatssicherung">Qualitätssicherung</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="semantische-analyse-in-knowledge-graphs">Semantische Analyse in Knowledge Graphs</h1>
+<p>Die semantische Analyse innerhalb von Wissensgraphen, die auf RDF (Resource Description Framework) basieren, bezieht sich auf den Prozess der Interpretation und Verarbeitung von Daten, um deren Bedeutung und Beziehungen zu verstehen. Durch die Verwendung von Ontologien und Vokabularen ermöglicht die semantische Analyse, dass Informationen nicht nur als einfache Datenpunkte, sondern als bedeutungsvolle Entitäten und deren Verknüpfungen betrachtet werden. Dies fördert die Fähigkeit, komplexe Abfragen zu stellen, inferenzielle Schlussfolgerungen zu ziehen und neue Erkenntnisse aus den verknüpften Daten zu gewinnen. In Wissensgraphen wird die semantische Analyse genutzt, um die Interoperabilität zwischen verschiedenen Datenquellen zu verbessern und eine tiefere Einsicht in die zugrunde liegenden Informationen zu ermöglichen. Zu diesem Zweck werden Annotationen verwendet, und wir betrachten dies in den folgenden Abschnitten näher.</p>
+<h2 id="annotationen">Annotationen</h2>
+<p>Wie bereits erwähnt, können RDF Daten in Form von Tripeln dargestellt werden, die aus einem Subjekt, einem Prädikat und einem Objekt bestehen. Das Objekt kann entweder ein Literal oder eine Ressource (IRI) sein. Ein Literal ist ein konkreter Wert, wie zum Beispiel ein Text oder eine Zahl, der direkt in den Tripel eingefügt wird, wie "42" oder "Hallo Welt". Eine Ressource hingegen verweist auf ein Konzept oder eine Entität, die durch eine IRI identifiziert wird, wie zum Beispiel eine Person oder einen Ort. </p>
+<p><a href="https://nif.readthedocs.io/en/latest/">NIF</a>, das für NLP Interchange Format steht, ist eine Architektur und Methodologie zur Annotation von Literalen oder Texten innerhalb eines Wissensgraphen. Es ermöglicht die standardisierte Darstellung von Textannotationen in RDF (Resource Description Framework), wodurch die Integration von natürlichen Sprachverarbeitungswerkzeugen und -ressourcen erleichtert wird. Mit NIF können verschiedene Entitäten, Konzepte und Beziehungen innerhalb von Texten annotiert werden, was die Interoperabilität zwischen unterschiedlichen NLP-Systemen fördert. Diese Flexibilität und die Möglichkeit, kontextuelle Informationen einzubeziehen, machen NIF zu einem wertvollen Instrument für die Anreicherung von Wissensgraphen mit reichhaltigen, annotierten Textdaten.</p>
+<p>Schauen wir uns noch einmal unser Triple an, das den Titel der "Satz des Pythagoras" Ressource darstellt:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;https://schema.org/name&gt; "Satz des Pythagoras" .
+</code></pre>
+<p>Wenn wir nun mit einem weiteren Triple angeben möchten, dass wir den Text "Satz des Pythagoras" (in anderen Worten das Objektliteral) in diesem Triple annotieren wollen, würde es wie folgt aussehen:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;https://w3id.org/curriculum/hasAnnotationTarget&gt; &lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_nif=context_p=name_char=0,19&gt; .
+</code></pre>
+<p>Der letzte Teil der Objekt-URI im Triple (nif=context_p=name_char=0,19) dient als Kontextbeschreibung dessen, was wir annotieren. In diesem Fall annotieren wir die Eigenschaft <i>name</i> (https://schema.org/name), und <i>char=0,19</i> zeigt an, dass wir alle Zeichen im Text als unseren Kontext spezifizieren.</p>
+<p>Nachdem wir den Annotation-Kontext definiert haben, wenden wir uns nun dem eigentlichen Annotierungsprozess zu. Der Annotierungsprozess analysiert die Wörter innerhalb des festgelegten Annotation-Kontexts. Dies geschieht durch den sogenannten 'Annotator'. Es können mehrere Annotatoren auf den Text angewendet werden, und je nach Annotator sind wir in der Lage, weitere Informationen aus dem Text zu extrahieren und diese wiederum mit anderen externen Wissensgraphen zu verknüpfen. In unserem Fall verwenden wir zwei Annotatoren, nämlich <a href="https://www.dbpedia-spotlight.org/">DBpedia Spotlight</a> und <a href="https://spacy.io/">spaCy</a>. DBpedia Spotlight ist ein Tool zur automatischen Annotation von Texten, das es ermöglicht, Entitäten aus der DBpedia-Wissensgraph in unstrukturierten Texten zu identifizieren und zu verlinken. DBpedia-Entitäten können auch problemlos mit Wikidata-Entitäten verknüpft werden, einem weiteren wichtigen externen Wissensgraphen, der strukturierte Daten über Personen, Orte und Dinge bereitstellt. Wenn wir unser Beispiel nun weiter ausbauen, sind wir in der Lage, mit zwei neuen Tripeln, DBpedia-Entitäten auf folgende Weise mit dem bereits definierten Kontext zu verknüpfen:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_a=dbpedia-spotlight_p=name_char=9,19&gt; &lt;https://w3id.org/curriculum/hasAnnotationTarget&gt; &lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_nif=context_p=name_char=0,19&gt; .
+
+&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_a=dbpedia-spotlight_p=name_char=9,19&gt; &lt;http://www.w3.org/2005/11/its/rdf#taIdentRef&gt; &lt;http://de.dbpedia.org/resource/Pythagoras&gt; .
+</code></pre>
+<p>Im letzten Teil des Subjekts des ersten Tripels sehen wir, dass der Annotator als DBpedia Spotlight angegeben ist und der Teil des Textes, der annotiert wurde, in diesem Fall von Zeichen 9 bis 19 reicht. Mit dem Prädikat <i>hasAnnotation</i> ist es mit dem oben angegebenen Kontext verknüpft. Das zweite Triple verknüpft den annotierten Text mit der spezifischen DBpedia-Entität über das Prädikat <i>taIndentRef</i>.</p>
+<p>SpaCy ist ein Annotator, der linguistische Informationen in Texten identifiziert, wie z.B. die Wortart, Named Entity Recognition und morphologische Merkmale. Die aus spaCy resultierenden annotierten Texte sind mit externen linguistischen Wissensgraphen verknüpft, wie z.B. WordNet. Die spaCy-Annotationen folgen ähnlichen Mustern wie die von DBpedia Spotlight und sehen wie folgt aus:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_a=spacy_p=name_char=9,19&gt; &lt;https://w3id.org/curriculum/hasAnnotationTarget&gt; &lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_nif=context_p=name_char=0,19&gt; .
+
+&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_a=spacy_p=name_char=9,19&gt; &lt;http://www.w3.org/2005/11/its/rdf#taIdentRef&gt; &lt;http://globalwordnet.org/ili/i96649&gt; .
+</code></pre>
+<p>Das Subjekt im ersten Triple gibt den Namen des Annotators als spaCy an, während das zweite Triple den annotierten Text mit der spezifischen WordNet-Entität (auch als Synset bezeichnet) verknüpft.</p>
+<p>Auf ähnliche Weise wird dieser Prozess auch für andere Objektliterale, die mit der Subjektressource verknüpft sind, wie <i>description</i> (https://schema.org/description) und <i>keywords</i> (https://schema.org/keywords), durchgeführt. Im nächsten Abschnitt werden wir die Anwendungsbereiche untersuchen, die uns durch diese Annotationen eröffnet werden.</p>
+<h2 id="anwendungsbereiche-von-annotationen">Anwendungsbereiche von Annotationen</h2>
+<p>Als grundlegenden ersten Schritt wäre es nützlich, eine einfache Textabgleichsuche in unserem Wissensgraphen durchzuführen, um Bildungsressourcen zu finden. Dazu könnten wir nach Wörtern in Objektliteralen suchen, die über die Prädikate <i>description</i> und <i>name</i> mit den Bildungsressourcen verknüpft sind. Probieren Sie die SPARQL-Abfrage unten aus, um nach "Pythagoras" in unserem Wissensgraphen zu suchen.</p>
+<p><strong>Zeigen Sie alle Dokumente an, die das Wort "Pythagoras" enthalten.</strong></p>
+<div id="yasgui6"></div>
+
+<h3 id="wikidata">Wikidata</h3>
+<p>Wie bereits erwähnt, ermöglicht uns der DBPedia Spotlight Annotator, Wikidata-Entitäten in unseren Bildungsressourcen zu identifizieren. Wir können nun die Wikidata-Entitäten nutzen, um weitere Informationen aus dem Wikidata-Wissensgraphen zu extrahieren. Jede Wikidata-Entität ist mit einer Liste von Kategorien verknüpft. Zum Beispiel hat der Satz des Pythagoras die Wikidata-IRI <a href="https://www.wikidata.org/wiki/Q11518">https://www.wikidata.org/wiki/Q11518</a>, und die Kategorien <i>Griechische Philosophie</i> und <i>Dreiecksgeometrie</i> sind mit ihm verknüpft. Das bedeutet, dass wir in der Lage sind, eine Liste von Wikidata-Kategorien mit jedem unserer Bildungsressourcendokumente zu verknüpfen. Dies gibt uns wiederum die Möglichkeit, Dokumente miteinander zu vergleichen und Empfehlungen basierend auf den gemeinsamen Kategorien, die diese Dokumente miteinander teilen, auszusprechen. Sehen wir uns ein Beispiel an. Wenn wir unsere Suchanfrage, wie oben erklärt, verwenden, um nach Dokumenten über den Satz des Pythagoras zu suchen, dann ist eines der Suchergebnisse "Geometrie: Videos zu Längen, Flächen und Winkeln" mit einer Wissensgraph-IRI von <a href="https://edu.yovisto.com/wlo/resource/74e54517-a997-40b4-8e58-1864a57b419e">https://edu.yovisto.com/wlo/resource/74e54517-a997-40b4-8e58-1864a57b419e</a>. Jetzt können wir diese Wissensgraph-IRI verwenden, um andere Dokumente basierend auf der Anzahl der gemeinsamen Kategorien, die sie haben, zu empfehlen.</p>
+<p><strong>Zeigen Sie Dokumente an, die verwant sind an "<a href="https://edu.yovisto.com/wlo/resource/74e54517-a997-40b4-8e58-1864a57b419e">https://edu.yovisto.com/wlo/resource/74e54517-a997-40b4-8e58-1864a57b419e</a>"</strong></p>
+<div id="yasgui7"></div>
+
+<p>Ein weiterer Vorteil eines Wissensgraph-Ansatzes in einem Empfehlungssystem ist, dass wir nicht nur Empfehlungen aussprechen können, sondern auch erklären können, warum diese Empfehlungen gegeben wurden. In der vorherigen Abfrage konnten wir eine Liste empfohlener Dokumente basierend auf der Anzahl der überlappenden Kategorien erhalten. Jetzt können wir in einer Folgeabfrage jedes der empfohlenen Dokumente mit dem ursprünglichen Dokument vergleichen, um eine genaue Liste der überlappenden Kategorien für das spezifische empfohlene Dokument und das ursprüngliche Dokument zu erhalten. Im oben genannten Beispiel "Geometrie: Videos zu Längen, Flächen und Winkeln" war die erste Empfehlung "ABSCHLUSSPRÜFUNG Realschule Mathe – Geometrie" mit einer Wissensgraph-IRI von <a href="https://edu.yovisto.com/wlo/resource/43be9071-ad66-44a6-8d35-23b6cc94fc04">https://edu.yovisto.com/wlo/resource/43be9071-ad66-44a6-8d35-23b6cc94fc04</a>. Da wir auch die IRI des ursprünglichen Dokuments haben, können wir jetzt einen Vergleich anstellen, um genau zu verstehen, warum diese beiden Dokumente miteinander verbunden sind.</p>
+<p><strong>Die Abfrage sieht wie folgt aus:</strong></p>
+<div id="yasgui8"></div>
+
+<p>Schließlich ist es auch erwähnenswert, dass Wikidata <a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views">out-of-the-box Visualisierungen</a> bietet, die leicht in eine Website eingebettet werden können. Da wir die entsprechenden Wikidata-Entitäten, die mit unserem Wissensgraphen verknüpft sind, haben, können wir ebenfalls von diesen Visualisierungen profitieren. Unten sind einige Beispiele:</p>
+<table>
+<tr>
+<td>
+<img src="/kg-images/Pythagoras1.png" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+</td>
+<td>
+<img src="/kg-images/Pythagoras2.png" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+</td>
+</tr>
+</table>
+
+<h3 id="wordnet">WordNet</h3>
+<p>Einer der großen Vorteile der Verknüpfung mit dem WordNet-Wissensgraphen ist, dass wir detailliertere Informationen über die Konzepte erhalten, die wir in unserem Text identifizieren. Wenn unser Annotator beispielsweise das Substantiv "Kohlenstoffdioxid" im Text identifiziert hat, sind wir in der Lage, eine Visualisierung aus dem WordNet-Wissensgraphen zu generieren, die wie folgt aussieht:</p>
+<div style="text-align: center;">
+    <img src="/kg-images/wordnet_de.png" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+</div>
+
+<p><br/>
+Ein weiterer Vorteil von WordNet ist der sogenannte Interlinguale Indikator (ILI), der ein Identifikator ist, der ähnliche Konzepte in verschiedenen Sprachen miteinander verknüpft. Dies ermöglicht es uns beispielsweise, unsere Visualisierung zu erweitern, um ein besseres kontextuelles Verständnis eines Konzepts in verschiedenen Sprachen zu erhalten. Unten ist eine Visualisierung des Substantiv "Kohlenstoffdioxid" mit dem Deutschen und dem Englischen nebeneinander:</p>
+<div style="text-align: center;">
+    <img src="/kg-images/wordnet_de_en.png" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+</div>
+
+<h2 id="qualitatssicherung">Qualitätssicherung</h2>
+<p>Obwohl die Annotatoren recht gut darin sind, Entitäten im Text zu identifizieren, machen sie dennoch Fehler. Dies ist besonders auffällig bei Named Entities, die mehrere Bedeutungen haben können. Zum Beispiel kann das Wort "Churchill" in einem Text entweder auf den britischen Politiker "Winston Churchill" oder auf eine kanadische Stadt namens "Churchill" verweisen. Gelegentlich ist der Annotator nicht in der Lage, die korrekte Entität aus dem Kontext abzuleiten, was zu Fehlklassifikationen führt.</p>
+<p>Um dieses Problem anzugehen und die Qualität zu verbessern, könnten wir mehrere Annotatoren einsetzen, die Wikidata-Entitäten im gleichen Text klassifizieren. Glücklicherweise ist DBPedia Spotlight nicht der einzige Annotator, der in der Lage ist, Wikidata-Entitäten zu klassifizieren. Der <a href="https://github.com/yovisto/kea-wiki-extraction">yovisto-KEA-Annotator</a> klassifiziert ebenfalls Wikidata-Entitäten. In diesem Zusammenhang ist es wichtig, dass die Annotatoren unterschiedliche Algorithmen verwenden, wenn sie die Wikidata-Entitäten klassifizieren, da sonst die Fehler wiederholt werden. Dies ermöglicht es uns nun zu schließen, dass die Genauigkeit höher ist, wenn beide Annotatoren eine bestimmte Wikidata-Entität für denselben Textabschnitt klassifiziert haben. Wenn beide Annotatoren die Wikidata-Entität für Pythagoras im Text, der mit unserer Bildungsressource verknüpft ist, klassifiziert haben, können wir dies in unserem Wissensgraphen wie folgt ausdrücken:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;http://edu.yovisto.com/ontology/1.0/annotationLevel2&gt;
+ &lt;http://de.dbpedia.org/resource/Pythagoras&gt; .
+</code></pre>
+<p>In diesem Beispiel haben wir die Bildungsressource mit der Wikidata (DBpedia)-Entität über ein sogenanntes Level-2-Prädikat verbunden. Sollte nur einer der Annotatoren eine Wikidata-Entität im Text klassifizieren, können wir dies dennoch in unserem Wissensgraphen mit einem Level-1-Prädikat wie folgt ausdrücken:     </p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;http://edu.yovisto.com/ontology/1.0/annotationLevel1&gt;
+ &lt;http://de.dbpedia.org/resource/Pythagoras&gt; .
+</code></pre>
+<p>Interessanterweise sind einige Wikidata-Entitäten im Wikidata-Wissensgraphen auch über den ILI mit WordNet-Konzepten verknüpft. Dies eröffnet weitere Möglichkeiten für Qualitätsprüfungen unserer Annotationen. Wenn beispielsweise einer unserer Wikidata-Annotatoren eine Wikidata-Entität mit einem WordNet-ILI identifiziert hat und unser spaCy-Annotator das WordNet-Konzept mit demselben WordNet-ILI identifiziert hat, das auf der Wikidata-Entität vorhanden ist, können wir es ebenfalls mit einem Level-2-Prädikat verknüpfen. Darüber hinaus, wenn beide Wikidata-Annotatoren (DBpedia Spotlight und yovisto-KEA) dieselbe Wikidata-Entität klassifiziert haben, die mit dem WordNet-Konzept verknüpft ist, könnten wir die Bildungsressource mit der Wikidata-Entität über ein Level-3-Prädikat verknüpfen. Dies wäre auch unser höchster bestätigter Qualitätsindikator und kann in unserem Wissensgraphen wie folgt ausgedrückt werden:     </p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;http://edu.yovisto.com/ontology/1.0/annotationLevel3&gt;
+ &lt;http://de.dbpedia.org/resource/Pythagoras&gt; .
+</code></pre>
+<p>Derzeit haben etwa 9300 Wikidata-Entitäten Verknüpfungen zu WordNet-Konzepten über den ILI, aber dies ist ein Forschungsfeld, das kontinuierlich weiterentwickelt wird, mit der klaren Möglichkeit, dies in naher Zukunft auf etwa 30000 zu erweitern. Dies könnte auch einen erheblichen Einfluss auf die Qualität der Annotationen in unserem Wissensgraphen haben. Der folgende Graph zeigt die Anzahl der überlappenden Übereinstimmungen für jeden Annotator in Bezug auf die oben genannten Annotationslevel. Wie erwähnt, wird die Anzahl der überlappenden WordNet-Annotationen mit anderen Annotatoren voraussichtlich stark steigen, angesichts der zunehmenden Verknüpfungen zwischen Wikidata und WordNet.</p>
+<div style="text-align: center;">
+    <img src="/kg-images/upset1.png" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+</div></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../yasgui.min.js"></script>
+    <script src="../app.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
