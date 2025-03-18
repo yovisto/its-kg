@@ -23,11 +23,11 @@ Schließlich ist es auch erwähnenswert, dass Wikidata [out-of-the-box Visualisi
 <tr>
 <td>
 
-<img src="/kg-images/kg-images - page 4.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+<img src="../kg-images/kg-images - page 4.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
 
 </td>
 <td>
-<img src="/kg-images/kg-images - page 5.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+<img src="../kg-images/kg-images - page 5.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
 </td>
 </tr>
 </table>
@@ -36,7 +36,7 @@ Schließlich ist es auch erwähnenswert, dass Wikidata [out-of-the-box Visualisi
 Einer der großen Vorteile der Verknüpfung mit dem WordNet-Wissensgraphen ist, dass wir detailliertere Informationen über die Konzepte erhalten, die wir in unserem Text identifizieren. Wenn unser Annotator beispielsweise das Substantiv "Kohlenstoffdioxid" im Text identifiziert hat, sind wir in der Lage, eine Visualisierung aus dem WordNet-Wissensgraphen zu generieren, die wie folgt aussieht:
 
 <div style="text-align: center;">
-	<img src="/kg-images/kg-images - page 6.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+	<img src="../kg-images/kg-images - page 6.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
 </div>
 
 <br/>

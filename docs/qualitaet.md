@@ -19,5 +19,5 @@ Interessanterweise sind einige Wikidata-Entitäten im Wikidata-Wissensgraphen au
 Derzeit haben etwa 9300 Wikidata-Entitäten Verknüpfungen zu WordNet-Konzepten über den ILI, aber dies ist ein Forschungsfeld, das kontinuierlich weiterentwickelt wird, mit der klaren Möglichkeit, dies in naher Zukunft auf etwa 30000 zu erweitern. Dies könnte auch einen erheblichen Einfluss auf die Qualität der Annotationen in unserem Wissensgraphen haben. Der folgende Graph zeigt die Anzahl der überlappenden Übereinstimmungen für jeden Annotator in Bezug auf die oben genannten Annotationslevel. Wie erwähnt, wird die Anzahl der überlappenden WordNet-Annotationen mit anderen Annotatoren voraussichtlich stark steigen, angesichts der zunehmenden Verknüpfungen zwischen Wikidata und WordNet.
 
 <div style="text-align: center;">
- <img src="/kg-images/kg-images - page 8.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;"> 
+ <img src="../kg-images/kg-images - page 8.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;"> 
 </div>
