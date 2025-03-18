@@ -43,5 +43,5 @@ Einer der großen Vorteile der Verknüpfung mit dem WordNet-Wissensgraphen ist, 
 Ein weiterer Vorteil von WordNet ist der sogenannte Interlinguale Indikator (ILI), der ein Identifikator ist, der ähnliche Konzepte in verschiedenen Sprachen miteinander verknüpft. Dies ermöglicht es uns beispielsweise, unsere Visualisierung zu erweitern, um ein besseres kontextuelles Verständnis eines Konzepts in verschiedenen Sprachen zu erhalten. Unten ist eine Visualisierung des Substantiv "Kohlenstoffdioxid" mit dem Deutschen und dem Englischen nebeneinander:
 
 <div style="text-align: center;">
-	<img src="/kg-images/kg-images - page 7.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+	<img src="../kg-images/kg-images - page 7.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
 </div>
