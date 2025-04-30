@@ -163,10 +163,10 @@ Hierbei steht <b>?l</b> für eine freie Variable, für die im Triplestore konkre
  
 
  
-Die Anfrage kann im sogenannten SPARQL Endpoint des Triplestores eingegeben werden. Für den hier eingesetzten Virtuoso ist das [https://edu.yovisto.com/sparql2](https://edu.yovisto.com/sparql2).
+Die Anfrage kann im sogenannten SPARQL Endpoint des Triplestores eingegeben werden. Für den hier eingesetzten Virtuoso ist das [https://edu.yovisto.com/sparql](https://edu.yovisto.com/sparql).
  
  
-Dort kann diese Anfrage also [eingegeben](https://edu.yovisto.com/sparql2?default-graph-uri=&qtxt=SELECT+%3Fl+WHERE+{%0D%0A<https%3A%2F%2Fedu.yovisto.com%2Fwlo%2Fresource%2Fa44c7b05-2a37-455f-a743-312ff064102e>+<https%3A%2F%2Fschema.org%2Fdescription>+%3Fl+.%0D%0A}+&format=text%2Fhtml&should-sponge=&timeout=0&signal_void=on) und abgesendet werden. Mit "Results Format" kann das entsprechende Format der Antwort ausgewählt werden (z.B. HTML für die Darstellung im Browser, oder CSV zum Download als Textdatei.). 
+Dort kann diese Anfrage also [eingegeben](https://edu.yovisto.com/sparql?default-graph-uri=&qtxt=SELECT+%3Fl+WHERE+{%0D%0A<https%3A%2F%2Fedu.yovisto.com%2Fwlo%2Fresource%2Fa44c7b05-2a37-455f-a743-312ff064102e>+<https%3A%2F%2Fschema.org%2Fdescription>+%3Fl+.%0D%0A}+&format=text%2Fhtml&should-sponge=&timeout=0&signal_void=on) und abgesendet werden. Mit "Results Format" kann das entsprechende Format der Antwort ausgewählt werden (z.B. HTML für die Darstellung im Browser, oder CSV zum Download als Textdatei.). 
  
 
  
@@ -256,7 +256,7 @@ Es ist natürlich hilfreich, wenn vorab bekannt ist, dass der IRI `http://w3id.o
 <div id="yasgui5"></div>
 
 
-## Zusammengefasst:
+## Zusammenfassung
 
 Der WLO Knowledge Graph enthält die öffentlichen Metadaten der Bildungsinhalte der Wirlernenonline Plattform. Diese sind in RDF gespeichert und über einen SPARQL Endpoint abrufbar. 
 

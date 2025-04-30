@@ -4,11 +4,11 @@ $(document).ready(function(){
     const div1 = document.getElementById("yasgui1");
     if (div1) {
         const yasgui = new Yasgui(div1, {
-            requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+            requestConfig: { endpoint: "https://edu.yovisto.com/sparql" },
             ensdpointCatalogueOptions: {
                 getData: function () {
                     return [
-                        { endpoint: "https://edu.yovisto.com/sparql2" },
+                        { endpoint: "https://edu.yovisto.com/sparql" },
                     ];
                 },
                 keys: [],
@@ -27,11 +27,11 @@ $(document).ready(function(){
     const div2 = document.getElementById("yasgui2");
     if (div2) {
         const yasgui2 = new Yasgui(document.getElementById("yasgui2"), {
-            requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+            requestConfig: { endpoint: "https://edu.yovisto.com/sparql" },
             ensdpointCatalogueOptions: {
                 getData: function () {
                     return [
-                        { endpoint: "https://edu.yovisto.com/sparql2" },
+                        { endpoint: "https://edu.yovisto.com/sparql" },
                     ];
                 },
                 keys: [],
@@ -58,11 +58,11 @@ $(document).ready(function(){
     const div3 = document.getElementById("yasgui3");
     if (div3) {
         const yasgui3 = new Yasgui(div3, {
-            requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+            requestConfig: { endpoint: "https://edu.yovisto.com/sparql" },
             ensdpointCatalogueOptions: {
                 getData: function () {
                     return [
-                        { endpoint: "https://edu.yovisto.com/sparql2" },
+                        { endpoint: "https://edu.yovisto.com/sparql" },
                     ];
                 },
                 keys: [],
@@ -79,11 +79,11 @@ $(document).ready(function(){
     const div4 = document.getElementById("yasgui4");
     if (div4) {
         const yasgui4 = new Yasgui(div4, {
-            requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+            requestConfig: { endpoint: "https://edu.yovisto.com/sparql" },
             ensdpointCatalogueOptions: {
                 getData: function () {
                     return [
-                        { endpoint: "https://edu.yovisto.com/sparql2" },
+                        { endpoint: "https://edu.yovisto.com/sparql" },
                     ];
                 },
                 keys: [],
@@ -104,11 +104,11 @@ $(document).ready(function(){
     const div5 = document.getElementById("yasgui5");
     if (div5) {
         const yasgui5 = new Yasgui(div5, {
-            requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+            requestConfig: { endpoint: "https://edu.yovisto.com/sparql" },
             ensdpointCatalogueOptions: {
                 getData: function () {
                     return [
-                        { endpoint: "https://edu.yovisto.com/sparql2" },
+                        { endpoint: "https://edu.yovisto.com/sparql" },
                     ];
                 },
                 keys: [],
@@ -128,11 +128,11 @@ $(document).ready(function(){
     const div6 = document.getElementById("yasgui6");
     if (div6) {
         const yasgui6 = new Yasgui(div6, {
-            requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+            requestConfig: { endpoint: "https://edu.yovisto.com/sparql" },
             ensdpointCatalogueOptions: {
                 getData: function () {
                     return [
-                        { endpoint: "https://edu.yovisto.com/sparql2" },
+                        { endpoint: "https://edu.yovisto.com/sparql" },
                     ];
                 },
                 keys: [],
@@ -161,11 +161,11 @@ $(document).ready(function(){
     const div7 = document.getElementById("yasgui7");
     if (div7){
         const yasgui7 = new Yasgui(div7, {
-            requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+            requestConfig: { endpoint: "https://edu.yovisto.com/sparql" },
             ensdpointCatalogueOptions: {
                 getData: function () {
                     return [
-                        { endpoint: "https://edu.yovisto.com/sparql2" },
+                        { endpoint: "https://edu.yovisto.com/sparql" },
                     ];
                 },
                 keys: [],
@@ -195,11 +195,11 @@ $(document).ready(function(){
     const div8 = document.getElementById("yasgui8");
     if (div8) {
         const yasgui8 = new Yasgui(div8, {
-            requestConfig: { endpoint: "https://edu.yovisto.com/sparql2" },
+            requestConfig: { endpoint: "https://edu.yovisto.com/sparql" },
             ensdpointCatalogueOptions: {
                 getData: function () {
                     return [
-                        { endpoint: "https://edu.yovisto.com/sparql2" },
+                        { endpoint: "https://edu.yovisto.com/sparql" },
                     ];
                 },
                 keys: [],
