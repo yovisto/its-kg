@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Semantische Analyse - WLO Knowledge Graph</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+    <link href="../yasgui.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">WLO Knowledge Graph</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Semantische Analyse</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../anwendungen/">Anwendungsbereiche</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../qualitaet/">Qualitätssicherung</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="..">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../anwendungen/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#semantische-analyse-in-knowledge-graphs">Semantische Analyse in Knowledge Graphs</a></li>
+            <li class="second-level"><a href="#annotationen">Annotationen</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="semantische-analyse-in-knowledge-graphs">Semantische Analyse in Knowledge Graphs</h1>
+<p>Die semantische Analyse innerhalb von Wissensgraphen, die auf RDF (Resource Description Framework) basieren, bezieht sich auf den Prozess der Interpretation und Verarbeitung von Daten, um deren Bedeutung und Beziehungen zu verstehen. Durch die Verwendung von Ontologien und Vokabularen ermöglicht die semantische Analyse, dass Informationen nicht nur als einfache Datenpunkte, sondern als bedeutungsvolle Entitäten und deren Verknüpfungen betrachtet werden. Dies fördert die Fähigkeit, komplexe Abfragen zu stellen, inferenzielle Schlussfolgerungen zu ziehen und neue Erkenntnisse aus den verknüpften Daten zu gewinnen. In Wissensgraphen wird die semantische Analyse genutzt, um die Interoperabilität zwischen verschiedenen Datenquellen zu verbessern und eine tiefere Einsicht in die zugrunde liegenden Informationen zu ermöglichen. Zu diesem Zweck werden Annotationen verwendet, und wir betrachten dies in den folgenden Abschnitten näher.</p>
+<h2 id="annotationen">Annotationen</h2>
+<p>Wie bereits erwähnt, können RDF Daten in Form von Tripeln dargestellt werden, die aus einem Subjekt, einem Prädikat und einem Objekt bestehen. Das Objekt kann entweder ein Literal oder eine Ressource (IRI) sein. Ein Literal ist ein konkreter Wert, wie zum Beispiel ein Text oder eine Zahl, der direkt in den Tripel eingefügt wird, wie "42" oder "Hallo Welt". Eine Ressource hingegen verweist auf ein Konzept oder eine Entität, die durch eine IRI identifiziert wird, wie zum Beispiel eine Person oder einen Ort. </p>
+<p><a href="https://nif.readthedocs.io/en/latest/">NIF</a>, das für NLP Interchange Format steht, ist eine Architektur und Methodologie zur Annotation von Literalen oder Texten innerhalb eines Wissensgraphen. Es ermöglicht die standardisierte Darstellung von Textannotationen in RDF (Resource Description Framework), wodurch die Integration von natürlichen Sprachverarbeitungswerkzeugen und -ressourcen erleichtert wird. Mit NIF können verschiedene Entitäten, Konzepte und Beziehungen innerhalb von Texten annotiert werden, was die Interoperabilität zwischen unterschiedlichen NLP-Systemen fördert. Diese Flexibilität und die Möglichkeit, kontextuelle Informationen einzubeziehen, machen NIF zu einem wertvollen Instrument für die Anreicherung von Wissensgraphen mit reichhaltigen, annotierten Textdaten.</p>
+<p>Schauen wir uns noch einmal unser Triple an, das den Titel der "Satz des Pythagoras" Ressource darstellt:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;https://schema.org/name&gt; "Satz des Pythagoras" .
+</code></pre>
+<p>Wenn wir nun mit einem weiteren Triple angeben möchten, dass wir den Text "Satz des Pythagoras" (in anderen Worten das Objektliteral) in diesem Triple annotieren wollen, würde es wie folgt aussehen:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;https://w3id.org/curriculum/hasAnnotationTarget&gt; &lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_nif=context_p=name_char=0,19&gt; .
+</code></pre>
+<p>Der letzte Teil der Objekt-URI im Triple (nif=context_p=name_char=0,19) dient als Kontextbeschreibung dessen, was wir annotieren. In diesem Fall annotieren wir die Eigenschaft <i>name</i> (https://schema.org/name), und <i>char=0,19</i> zeigt an, dass wir alle Zeichen im Text als unseren Kontext spezifizieren.</p>
+<p>Nachdem wir den Annotation-Kontext definiert haben, wenden wir uns nun dem eigentlichen Annotierungsprozess zu. Der Annotierungsprozess analysiert die Wörter innerhalb des festgelegten Annotation-Kontexts. Dies geschieht durch den sogenannten 'Annotator'. Es können mehrere Annotatoren auf den Text angewendet werden, und je nach Annotator sind wir in der Lage, weitere Informationen aus dem Text zu extrahieren und diese wiederum mit anderen externen Wissensgraphen zu verknüpfen. In unserem Fall verwenden wir zwei Annotatoren, nämlich <a href="https://www.dbpedia-spotlight.org/">DBpedia Spotlight</a> und <a href="https://spacy.io/">spaCy</a>. DBpedia Spotlight ist ein Tool zur automatischen Annotation von Texten, das es ermöglicht, Entitäten aus der DBpedia-Wissensgraph in unstrukturierten Texten zu identifizieren und zu verlinken. DBpedia-Entitäten können auch problemlos mit Wikidata-Entitäten verknüpft werden, einem weiteren wichtigen externen Wissensgraphen, der strukturierte Daten über Personen, Orte und Dinge bereitstellt. Wenn wir unser Beispiel nun weiter ausbauen, sind wir in der Lage, mit zwei neuen Tripeln, DBpedia-Entitäten auf folgende Weise mit dem bereits definierten Kontext zu verknüpfen:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_a=dbpedia-spotlight_p=name_char=9,19&gt; &lt;https://w3id.org/curriculum/hasAnnotationTarget&gt; &lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_nif=context_p=name_char=0,19&gt; .
+
+&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_a=dbpedia-spotlight_p=name_char=9,19&gt; &lt;http://www.w3.org/2005/11/its/rdf#taIdentRef&gt; &lt;http://de.dbpedia.org/resource/Pythagoras&gt; .
+</code></pre>
+<p>Im letzten Teil des Subjekts des ersten Tripels sehen wir, dass der Annotator als DBpedia Spotlight angegeben ist und der Teil des Textes, der annotiert wurde, in diesem Fall von Zeichen 9 bis 19 reicht. Mit dem Prädikat <i>hasAnnotation</i> ist es mit dem oben angegebenen Kontext verknüpft. Das zweite Triple verknüpft den annotierten Text mit der spezifischen DBpedia-Entität über das Prädikat <i>taIndentRef</i>.</p>
+<p>SpaCy ist ein Annotator, der linguistische Informationen in Texten identifiziert, wie z.B. die Wortart, Named Entity Recognition und morphologische Merkmale. Die aus spaCy resultierenden annotierten Texte sind mit externen linguistischen Wissensgraphen verknüpft, wie z.B. WordNet. Die spaCy-Annotationen folgen ähnlichen Mustern wie die von DBpedia Spotlight und sehen wie folgt aus:</p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_a=spacy_p=name_char=9,19&gt; &lt;https://w3id.org/curriculum/hasAnnotationTarget&gt; &lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_nif=context_p=name_char=0,19&gt; .
+
+&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e_a=spacy_p=name_char=9,19&gt; &lt;http://www.w3.org/2005/11/its/rdf#taIdentRef&gt; &lt;http://globalwordnet.org/ili/i96649&gt; .
+</code></pre>
+<p>Das Subjekt im ersten Triple gibt den Namen des Annotators als spaCy an, während das zweite Triple den annotierten Text mit der spezifischen WordNet-Entität (auch als Synset bezeichnet) verknüpft.</p>
+<p>Auf ähnliche Weise wird dieser Prozess auch für andere Objektliterale, die mit der Subjektressource verknüpft sind, wie <i>description</i> (https://schema.org/description) und <i>keywords</i> (https://schema.org/keywords), durchgeführt. Im nächsten Abschnitt werden wir die Anwendungsbereiche untersuchen, die uns durch diese Annotationen eröffnet werden.</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small><div class='footer'><p>created with <a href='https://www.wikidata.org/wiki/Q316'><span>&#10084;</span></a> for <a href='https://its.jointly.info/''>ITsJOINTLY</a> by <a href='https://yovisto.com'>yovisto.com</a> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://yovisto.com/de/impressum/'>Impressum</a> </p></div> <br><img src='https://its.jointly.info/wp-content/uploads/sites/32/2023/09/logos_horizontal-3.svg'><br></small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../yasgui.min.js"></script>
+    <script src="../app.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Anwendungsbereiche - WLO Knowledge Graph</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+    <link href="../yasgui.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">WLO Knowledge Graph</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../annotationen/">Semantische Analyse</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Anwendungsbereiche</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../qualitaet/">Qualitätssicherung</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../annotationen/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../qualitaet/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#anwendungsbereiche">Anwendungsbereiche</a></li>
+            <li class="second-level"><a href="#recommender">Recommender</a></li>
+                
+            <li class="second-level"><a href="#wordnet">WordNet</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="anwendungsbereiche">Anwendungsbereiche</h1>
+<p>Als grundlegenden ersten Schritt wäre es nützlich, eine einfache Textabgleichsuche in unserem Wissensgraphen durchzuführen, um Bildungsressourcen zu finden. Dazu könnten wir nach Wörtern in Objektliteralen suchen, die über die Prädikate <i>description</i> und <i>name</i> mit den Bildungsressourcen verknüpft sind. Probieren Sie die SPARQL-Abfrage unten aus, um nach "Pythagoras" in unserem Wissensgraphen zu suchen.</p>
+<p><strong>Zeigen Sie alle Dokumente an, die das Wort "Pythagoras" enthalten.</strong></p>
+<div id="yasgui6"></div>
+
+<h2 id="recommender">Recommender</h2>
+<p>Wie bereits erwähnt, ermöglicht uns der DBPedia Spotlight Annotator, Wikidata-Entitäten in unseren Bildungsressourcen zu identifizieren. Wir können nun die Wikidata-Entitäten nutzen, um weitere Informationen aus dem Wikidata-Wissensgraphen zu extrahieren. Jede Wikidata-Entität ist mit einer Liste von Kategorien verknüpft. Zum Beispiel hat der Satz des Pythagoras die Wikidata-IRI <a href="https://www.wikidata.org/wiki/Q11518">https://www.wikidata.org/wiki/Q11518</a>, und die Kategorien <i>Griechische Philosophie</i> und <i>Dreiecksgeometrie</i> sind mit ihm verknüpft. Das bedeutet, dass wir in der Lage sind, eine Liste von Wikidata-Kategorien mit jedem unserer Bildungsressourcendokumente zu verknüpfen. Dies gibt uns wiederum die Möglichkeit, Dokumente miteinander zu vergleichen und Empfehlungen basierend auf den gemeinsamen Kategorien, die diese Dokumente miteinander teilen, auszusprechen. Sehen wir uns ein Beispiel an. Wenn wir unsere Suchanfrage, wie oben erklärt, verwenden, um nach Dokumenten über den Satz des Pythagoras zu suchen, dann ist eines der Suchergebnisse "Geometrie: Videos zu Längen, Flächen und Winkeln" mit einer Wissensgraph-IRI von <a href="https://edu.yovisto.com/wlo/resource/74e54517-a997-40b4-8e58-1864a57b419e">https://edu.yovisto.com/wlo/resource/74e54517-a997-40b4-8e58-1864a57b419e</a>. Jetzt können wir diese Wissensgraph-IRI verwenden, um andere Dokumente basierend auf der Anzahl der gemeinsamen Kategorien, die sie haben, zu empfehlen.</p>
+<p><strong>Zeigen Sie Dokumente an, die verwant sind an "<a href="https://edu.yovisto.com/wlo/resource/74e54517-a997-40b4-8e58-1864a57b419e">https://edu.yovisto.com/wlo/resource/74e54517-a997-40b4-8e58-1864a57b419e</a>"</strong></p>
+<div id="yasgui7"></div>
+
+<p>Ein weiterer Vorteil eines Wissensgraph-Ansatzes in einem Empfehlungssystem ist, dass wir nicht nur Empfehlungen aussprechen können, sondern auch erklären können, warum diese Empfehlungen gegeben wurden. In der vorherigen Abfrage konnten wir eine Liste empfohlener Dokumente basierend auf der Anzahl der überlappenden Kategorien erhalten. Jetzt können wir in einer Folgeabfrage jedes der empfohlenen Dokumente mit dem ursprünglichen Dokument vergleichen, um eine genaue Liste der überlappenden Kategorien für das spezifische empfohlene Dokument und das ursprüngliche Dokument zu erhalten. Im oben genannten Beispiel "Geometrie: Videos zu Längen, Flächen und Winkeln" war die erste Empfehlung "ABSCHLUSSPRÜFUNG Realschule Mathe – Geometrie" mit einer Wissensgraph-IRI von <a href="https://edu.yovisto.com/wlo/resource/43be9071-ad66-44a6-8d35-23b6cc94fc04">https://edu.yovisto.com/wlo/resource/43be9071-ad66-44a6-8d35-23b6cc94fc04</a>. Da wir auch die IRI des ursprünglichen Dokuments haben, können wir jetzt einen Vergleich anstellen, um genau zu verstehen, warum diese beiden Dokumente miteinander verbunden sind.</p>
+<p><strong>Die Abfrage sieht wie folgt aus:</strong></p>
+<div id="yasgui8"></div>
+
+<p>Schließlich ist es auch erwähnenswert, dass Wikidata <a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views">out-of-the-box Visualisierungen</a> bietet, die leicht in eine Website eingebettet werden können. Da wir die entsprechenden Wikidata-Entitäten, die mit unserem Wissensgraphen verknüpft sind, haben, können wir ebenfalls von diesen Visualisierungen profitieren. Unten sind einige Beispiele:</p>
+<table>
+<tr>
+<td>
+
+<img src="../kg-images/kg-images - page 4.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+
+</td>
+<td>
+<img src="../kg-images/kg-images - page 5.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+</td>
+</tr>
+</table>
+
+<h2 id="wordnet">WordNet</h2>
+<p>Einer der großen Vorteile der Verknüpfung mit dem WordNet-Wissensgraphen ist, dass wir detailliertere Informationen über die Konzepte erhalten, die wir in unserem Text identifizieren. Wenn unser Annotator beispielsweise das Substantiv "Kohlenstoffdioxid" im Text identifiziert hat, sind wir in der Lage, eine Visualisierung aus dem WordNet-Wissensgraphen zu generieren, die wie folgt aussieht:</p>
+<div style="text-align: center;">
+    <img src="../kg-images/kg-images - page 6.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+</div>
+
+<p><br/>
+Ein weiterer Vorteil von WordNet ist der sogenannte Interlinguale Indikator (ILI), der ein Identifikator ist, der ähnliche Konzepte in verschiedenen Sprachen miteinander verknüpft. Dies ermöglicht es uns beispielsweise, unsere Visualisierung zu erweitern, um ein besseres kontextuelles Verständnis eines Konzepts in verschiedenen Sprachen zu erhalten. Unten ist eine Visualisierung des Substantiv "Kohlenstoffdioxid" mit dem Deutschen und dem Englischen nebeneinander:</p>
+<div style="text-align: center;">
+    <img src="../kg-images/kg-images - page 7.svg" style="border: 1px solid black; padding: 5px; max-width: 100%; height: auto;">
+</div></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small><div class='footer'><p>created with <a href='https://www.wikidata.org/wiki/Q316'><span>&#10084;</span></a> for <a href='https://its.jointly.info/''>ITsJOINTLY</a> by <a href='https://yovisto.com'>yovisto.com</a> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://yovisto.com/de/impressum/'>Impressum</a> </p></div> <br><img src='https://its.jointly.info/wp-content/uploads/sites/32/2023/09/logos_horizontal-3.svg'><br></small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../yasgui.min.js"></script>
+    <script src="../app.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

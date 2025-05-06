@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    
+    <title>Home - WLO Knowledge Graph</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="css/base.min.css" rel="stylesheet">
+    <link href="css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+    <link href="yasgui.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href=".">WLO Knowledge Graph</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="annotationen/">Semantische Analyse</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="anwendungen/">Anwendungsbereiche</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="qualitaet/">Qualitätssicherung</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="annotationen/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#itsjointly-wlo-knowledge-graph">ITsJOINTLY / WLO Knowledge Graph</a></li>
+            <li class="second-level"><a href="#was-ist-der-wlo-knowledge-graph">Was ist der WLO Knowledge Graph</a></li>
+                
+            <li class="second-level"><a href="#kernkonzepte-rdf-owl-und-sparql">Kernkonzepte: RDF, OWL und SPARQL</a></li>
+                
+                <li class="third-level"><a href="#rdf-die-basisstruktur-des-wissensgraphen">RDF – Die Basisstruktur des Wissensgraphen</a></li>
+                <li class="third-level"><a href="#owl-ontologien-zur-definition-von-beziehungen">OWL – Ontologien zur Definition von Beziehungen</a></li>
+                <li class="third-level"><a href="#sparql-abfragen-von-informationen">SPARQL – Abfragen von Informationen</a></li>
+            <li class="second-level"><a href="#wie-wird-der-wlo-knowledge-graph-erzeugt">Wie wird der WLO Knowledge Graph erzeugt</a></li>
+                
+            <li class="second-level"><a href="#wie-ist-der-wissengraph-aufgebaut">Wie ist der Wissengraph aufgebaut?</a></li>
+                
+                <li class="third-level"><a href="#los-gehts-mit-sparql">Los geht's mit SPARQL</a></li>
+            <li class="second-level"><a href="#struktur-der-daten">Struktur der Daten</a></li>
+                
+            <li class="second-level"><a href="#zusammenfassung">Zusammenfassung</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="itsjointly-wlo-knowledge-graph">ITsJOINTLY / WLO Knowledge Graph</h1>
+<p>Willkommen beim WLO Knowledge Graph (WLOKG).</p>
+<h2 id="was-ist-der-wlo-knowledge-graph">Was ist der WLO Knowledge Graph</h2>
+<p>Der WLO Knowledge Graph ist ein RDF/OWL-basierter Wissensgraph für die Open Educational Resource (OER)-Plattform <a href="https://wirlernenonline.de/">Wir Lenen Online (WLO)</a>. Der Wissengraph wurde im Rahmen des <a href="https://its.jointly.info/">ITsJOINTLY</a> Projektes entwickelt. Er dient dazu, Bildungsinhalte für Schulen strukturiert, vernetzt und maschineninterpretierbar bereitzustellen. Ziel ist es, die Nutzung und das Wiederauffinden von hochwertigen, offenen Lernmaterialien für Lehrende und Lernende zu erleichtern. Dieser Einführungstext gibt eine Übersicht über den Aufbau und die Funktionsweise des Wissensgraphen sowie über die verwendeten Kernkonzepte des Semantic Web, die ihn ermöglichen.</p>
+<p>Die Nutzung eines Wissensgraphen zur Organisation der WLO-Inhalte bietet verschiedene Vorteile: </p>
+<ul>
+<li>
+<p><b>Interoperabilität und Austauschbarkeit:</b> Durch die Verwendung offener Standards wie RDF und OWL ist der Wissensgraph interoperabel und kann leicht mit anderen Systemen und Datenquellen (z.B. Wikidata, DBpedia, Normdaten, etc.) verknüpft werden.</p>
+</li>
+<li>
+<p><b>Skalierbarkeit und Erweiterbarkeit:</b> Neue Themen, Fächer oder Inhalte lassen sich leicht in das vorhandene Wissensnetz einfügen.</p>
+</li>
+<li>
+<p><b>Automatisierung und Empfehlungen:</b> Die Plattform kann auf Basis der Wissensgraphen-Struktur automatisierte Empfehlungen anbieten, die über eine traditionelle Suchfunktion hinausgehen, z.B. thematisch relevante Inhalte.</p>
+</li>
+<li>
+<p><b>Verbesserte Suchbarkeit und Kontextualisierung:</b> Durch die semantische Verknüpfung von Begriffen und Konzepten können Benutzer in angeschlossenen Systemen schneller relevante Informationen finden, die durch ihre Bedeutung und nicht nur durch Schlüsselwörter definiert sind.</p>
+</li>
+<li>
+<p><b>Transparenz und Nachvollziehbarkeit:</b> Der Wissensgraph ermöglicht eine nachvollziehbare Darstellung von Verbindungen, Quellen und Empfehlungen, was die Transparenz und das Vertrauen in die bereitgestellten Inhalte erhöht.</p>
+</li>
+<li>
+<p><b>Multidimensionale Analyse:</b> Der Wissensgraph erlaubt eine vielschichtige Analyse von Inhalten, sodass Trends, Wissenslücken und Zusammenhänge auf verschiedenen Ebenen untersucht werden können.</p>
+</li>
+<li>
+<p><b>Integration von maschinellem Lernen und KI:</b> Der Wissensgraph bildet eine ideale Grundlage für den Einsatz von KI-Algorithmen, die neue Erkenntnisse aus bestehenden Daten ableiten oder verborgene Zusammenhänge entdecken können.</p>
+</li>
+</ul>
+<p>Es gibt zahlreiche Anwendungsszenarien, auf die wir im Verlauf dieses Dokuments eingehen werden.</p>
+<h2 id="kernkonzepte-rdf-owl-und-sparql">Kernkonzepte: RDF, OWL und SPARQL</h2>
+<p>Die wichtigsten Technologien, die bei der Erzeugung und Verwendung des WLO Wissensgraphen zum Einsatz kommen sind RDF, OWL und SPARQL. </p>
+<h3 id="rdf-die-basisstruktur-des-wissensgraphen">RDF – Die Basisstruktur des Wissensgraphen</h3>
+<p>RDF (Resource Description Framework) bildet das Fundament des Wissensgraphen. In RDF wird Wissen in Form von sogenannten Tripeln gespeichert, die jeweils aus einem Subjekt, einem Prädikat und einem Objekt bestehen. Ein Beispiel für ein RDF-Tripel in unserem Wissensgraphen könnte sein: „Lernressource A hat Thema ‚Mathematik‘“. Solche Tripel ermöglichen es, Informationen einfach zu verknüpfen und dadurch Wissensnetze zu schaffen. Jeder Teil eines Tripels ist dabei durch einen IRI (International Resource Identifier) eindeutig gekennzeichnet, was Verwechslungen ausschließt und Interoperabilität zwischen verschiedenen Systemen unterstützt. Mehr Details zu RDF können in der <a href="https://www.w3.org/TR/rdf11-concepts/" target="_blank">RDF-Spezifikation</a> gefunden werden.</p>
+<h3 id="owl-ontologien-zur-definition-von-beziehungen">OWL – Ontologien zur Definition von Beziehungen</h3>
+<p>OWL (Web Ontology Language) baut auf RDF auf und erlaubt es, komplexe Beziehungen und Hierarchien zwischen den verschiedenen Bildungsinhalten festzulegen. Eine Ontologie definiert dabei das Vokabular und die Regeln, mit denen die Bildungsressourcen beschrieben und miteinander in Beziehung gesetzt werden können. Beispielsweise könnte in einer OWL-Ontologie definiert sein, dass eine "Lernressource" entweder eine "Aufgabe" oder ein "Lehrplan-Dokument" sein kann und dass jedes Lehrplan-Dokument einem bestimmten Bildungsziel zugeordnet ist. Durch diese semantische Struktur lassen sich Zusammenhänge zwischen verschiedenen Ressourcen und Bildungsstufen logisch abbilden und gezielt für die Suche und Empfehlung nutzen. Die komplette Spezifikation von OWL kann hier gefunden werden: <a href="https://www.w3.org/TR/owl2-overview/" target="_blank">OWL 2 Web Ontology Language </a></p>
+<h3 id="sparql-abfragen-von-informationen">SPARQL – Abfragen von Informationen</h3>
+<p>SPARQL ist die Abfragesprache für RDF-basierte Wissensgraphen. Sie ermöglicht es, spezifische Informationen oder Beziehungen im WLO Wissensgraphen abzurufen, etwa alle verfügbaren Mathematik-Ressourcen für die Sekundarstufe I. Dadurch wird der Wissensgraph durchsuchbar und Nutzer können gezielt Bildungsinhalte finden, die ihren Lernbedürfnissen entsprechen. Die genaue Syntax und eine Beschreibung ihrer Funktionen kann unter <a href="https://www.w3.org/TR/sparql11-query/" target="_blank">SPARQL Abfragesprache</a> gefunden werden.</p>
+<p>RDF, OWL und SPARQL sind komplexe Technologien mit vielen Möglichkeiten. Eine übersichtliche Einführung als frei verfügbare Videos gibt die Vorlesung "<a href="https://open.hpi.de/courses/knowledgegraphs2023/items/78vWmgMAIpElbf4qI5HvMa">Knowledge Graphs - Foundations and Applications</a>". Weitere spannende Resourcen, Links und Tutorials können unter <a href="https://github.com/semantalytics/awesome-semantic-web">Awesome Semantic Web</a> gefunden werden.</p>
+<h2 id="wie-wird-der-wlo-knowledge-graph-erzeugt">Wie wird der WLO Knowledge Graph erzeugt</h2>
+<p>Der WLO Knowledge Graph wird aus Metadaten der Inhalte der <a href="https://www.wirlernen.online/">WLO Plattform</a> automatisch generiert. Das Update erfolgt in regelmäßigen Abständen (aktuell einmal wöchentlich). Zusätzlich werden auch andere Ressourcen in den Wissensgraphen importiert. Hierzu zählen zum Beispiel relevante Teile aus Wikidata, verschiedene kontrollierte Vokabulare, zum Beispiel aus dem Repository der <a href="https://github.com/dini-ag-kim/">DINI AG KIM</a>, <a href="https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html">GND</a>, <a href="https://globalwordnet.org/">Wordnet</a>, Kompetenz Frameworks (z.B. ESCO), Lehrplandaten oder Sachgebietssystematiken. </p>
+<p>Die im WLO Knowledge Graph zusammengestellten Daten können anschließend durch verschiedene Anwendungen abgefragt und verwendet werden. Hierzu zählen unter anderem Empfehlungssysteme, semantische Suche oder Lernpfade.</p>
+<p><img alt="" src="kg-images/kg-images%20-%20page%201.svg" /></p>
+<h2 id="wie-ist-der-wissengraph-aufgebaut">Wie ist der Wissengraph aufgebaut?</h2>
+<p>Zunächst ein kleiner Ausflug in die Welt von RDF.</p>
+<p>Gemäß RDF Standard werden alle "Dinge" durch einen <i>International Resource Identifier</i> (IRI) repräsentiert. So steht z.B. der IRI </p>
+<pre><code>https://dbpedia.org/resource/Albert_Einstein
+</code></pre>
+<p>Für den berühmten Wissenschaftler "Albert Einstein". Der IRI ist also ein Symbol für das Konzept, das in unseren Köpfen entsteht, wenn wir z.B. über diese bestimmte Person sprechen. Der IRI repräsentiert also diese Person.</p>
+<blockquote>
+<p>Warum verwenden wir nicht einfach den Namen? Die natürliche Sprache ist mehrdeutig, d.h. es gibt "Dinge" die denselben Namen haben, aber unterschiedliche Bedeutung (sogenannte Polyseme), z.B. Bank. Erst durch die Verwendung des Begriffes, insbesondere mit welchen anderen Begriffen er verwendet wird (den Kontext), wird klar, welche Bedeutung gemeint ist. Z.B. "die Bank zum Sitzen", "die Bank als Geldinstitut", "die Sandbank". Um auf jeder dieser Bedeutungen klar Bezug nehmen zu können, wird <strong>jede</strong> dieser Bedeutungen durch einen IRI repräsentiert. So bedarf es keinen Kontext mehr, um die Bedeutung zu erkennen.</p>
+</blockquote>
+<p>Diese IRIs können dann in Form eines Tripels einen konkreten Fakt ausdrücken. Z.B: </p>
+<pre><code>&lt;https://dbpedia.org/resource/Albert_Einstein&gt; &lt;http://dbpedia.org/ontology/birthPlace&gt;  &lt;http://dbpedia.org/resource/Ulm&gt; .
+</code></pre>
+<p>In diesem Beispiel aus der <a href="https://www.dbpedia.org/">DBpedia</a> wird ausgedrückt, dass Albert Einstein in Ulm geboren wurde. 
+Die drei Elemente werden üblicherweise als <b>Subjekt Prädikat</b> und <b>Objekt</b> bezeichnet. Eben genau wie ein einfacher Satz. Typischerweise werdend die IRIs in spitze Klammern "&lt;" "&gt;" geschrieben und das Tripel mit einem Punkt "." beendet. Danach kann ein neues Tripel beginnen. </p>
+<p>Die genaue Bedeutung des Prädikats "birthPlace" wird in einer Ontologie beschrieben. In diesem Fall ist es die DBpedia Ontologie. Es ist üblich, dass die IRIs im Browser aufgerufen werden können. Dort ist dann weitere Information verfügbar, wie eben z.B. die ontologische Beschreibung dessen, was der IRI repräsentiert, z.B.: <b><a href="http://dbpedia.org/ontology/birthPlace">http://dbpedia.org/ontology/birthPlace</a></b></p>
+<p>Nicht immer sind die IRIs wie im obigen Beispiel "lesbar". Manchmal enthalten sie nur eine ID und die eigentliche Bedeutung muss dann erst nachgeschlagen werden, z.B.: <b><a href="http://purl.obolibrary.org/obo/GSSO_000004">http://purl.obolibrary.org/obo/GSSO_000004</a></b> .</p>
+<p>Unter anderem aus diesem Grund können auch sogenannte <b>Literale</b> als Objekt verwendet werden. Literale enthalten einfache Daten, die in Form der üblichen Datentypen (z.B. String, Integer, etc.) hinterlegt werden. Das kann z.B. die Beschreibung oder ein Titel dessen sein, wofür der IRI steht.</p>
+<p>Folgende Tripel zeigen ein Beispiel:</p>
+<pre><code>&lt;http://purl.obolibrary.org/obo/IAO_0000115&gt; &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; "definition" .
+&lt;http://purl.obolibrary.org/obo/GSSO_000004&gt; &lt;http://purl.obolibrary.org/obo/IAO_0000115&gt; "The anniversary of the day on which someone is born." .
+</code></pre>
+<p>IAO_0000115 hat eine Bezeichnung (label) "definition" und GSSO_000004 hat ein "IAO_0000115", das lautet "The anniversary of the day on which someone is born." .</p>
+<p>Mit anderen Worten: GSSO_000004 hat die Definition "The anniversary of the day on which someone is born." . </p>
+<p>Das wirkt alles etwas umständlich, aber diese Darstellung ermöglicht es, sehr komplexe Wissenstrukturen logisch auszudrücken, sodass Maschinen bzw. Computerprogramme diese Daten sehr gut verarbeiten können. </p>
+<p>Im Beispiel ist auch zu sehen, dass die Bedeutung der einzelnen IRIs auch wieder durch Tripel beschrieben werden kann. Das erinnert irgendwie an ein "rekursives", sich wiederholendes System. Doch wo beginnt alles?</p>
+<p>Die Basis ist eben genau durch den RDF Standard vorgegeben. Dort ist festgelegt, das z.B. der IRI <b>http://www.w3.org/2000/01/rdf-schema#label</b> bedeutet, dass das Literal als Objekt den Titel dessen enthält, was das Subjekt repräsentiert. 
+Es gibt natürlich noch zahlreiche weitere vorgegebene Bedeutungen die im <a href="https://www.w3.org/TR/rdf11-concepts/">RDF Standard</a> nachgelesen werden können.</p>
+<p>Mit RDF können sehr komplexe Zusammenhänge dargestellt werden. Das besondere ist, dass die Art und Weise der Darstellung der Zusammenhänge einer gewissen Logik unterliegen. Deshalb können unter bestimmten Voraussetzungen auch Schlussfolgerungen aus den Daten gezogen werden. Dennoch gibt es Grenzen. RDF hat diesbezüglich nur beschränkte Möglichkeiten. So können z.B. keine Inkonsistenzen festgestellt werden. Hier kommt OWL in Spiel. Mit OWL lassen sich genauere und logisch fundiertere Zusammenhänge beschreiben. Aber dies im Detail zu erklären führt an dieser Stelle zu weit.</p>
+<p>Nun zurück zu WLO:</p>
+<p>Mit dem folgenden IRI wird im WLO Knowledge Graphen ein bestimmtes Dokument aus der WLO Plattform repräsentiert:</p>
+<p><b><a href="https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e">https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e</a></b></p>
+<p>Klickt man darauf, erhält man die Informationen, die zu diesem Objekt im Knowledge Graphen bekannt sind. 
+Oben steht das Subjekt und dann kommen die mit dem Subjekt verbundenen Prädikate (links) und den Objekten (rechts). </p>
+<p>Zur Darstellung dieser Webseite wird hier eine Software namens <a href="https://github.com/LodLive/LodView">LodView</a> verwendet. Die eigentlichen RDF Daten befinden sich in einem Triplestore. Dies ist einen spezielle Datenbank, die optimiert ist, RDF Tripel zu verarbeiten. Konkret wird hier der <a href="https://github.com/openlink/virtuoso-opensource">Virtuoso Triplestore</a> von <a href="https://www.openlinksw.com/">OpenLink</a> in der OpenSource Variante eingesetzt. LodView ist also eine Anwendung zur Visualiserung der RDF Daten, die an den Triplestore angeschlossen ist.</p>
+<p>Um nur die konreten Tripel zum obigen IRI zu erhalten kann der Paramter "?output=text%2Fplain" an den IRI engehängt werden:</p>
+<p><b><a href="https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e?output=text%2Fplain">https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e?output=text%2Fplain</a></b> </p>
+<p>LodView liefert dann die Tripel entsprechend als Textdatei zurück. Diese ist allerdings nicht so gut lesbar, wie die Darstellung in Lodview, dennoch kann diese Textdatei von Programmen, die RDF unterstützen, weiter verarbeitet werden. 
+LodView kann die Daten also <b>"menschenlesbar"</b> in Form einer Webseite oder <b>"maschineninterpretierbar"</b> in Form einer Textdatei mit Tripeln ausliefern.</p>
+<p>Doch wie kommt LodView eigentlich an die Daten im Tripelstore ran? </p>
+<p>So ziemlich jeder RDF Tripelstore bietet eine SPARQL Schnittstelle an, mit der die Daten abgerufen werden können. 
+SPARQL steht für "SPARQL Protocol And RDF Query Language". Es ist eine formale Abfragesprache mit der Anfragen an den Triplestore gestellt werden können, der dann entsprechend mit Daten antwortet.  </p>
+<p>Ein Beispiel: </p>
+<pre><code>SELECT ?l WHERE {
+    &lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;https://schema.org/description&gt; ?l .
+}
+</code></pre>
+<p>Hierbei steht <b>?l</b> für eine freie Variable, für die im Triplestore konkrete Werte gesucht werden. Die freie Variable kann also anstelle eines IRIs verwendet werden. Die Anfrage lautet also: gibt alle Objekte (?l) der Tripel zurück, deren Subjekt https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e und Prädikat https://schema.org/description ist. </p>
+<p>Die Anfrage kann im sogenannten SPARQL Endpoint des Triplestores eingegeben werden. Für den hier eingesetzten Virtuoso ist das <a href="https://edu.yovisto.com/sparql">https://edu.yovisto.com/sparql</a>.</p>
+<p>Dort kann diese Anfrage also <a href="https://edu.yovisto.com/sparql?default-graph-uri=&amp;qtxt=SELECT+%3Fl+WHERE+{%0D%0A&lt;https%3A%2F%2Fedu.yovisto.com%2Fwlo%2Fresource%2Fa44c7b05-2a37-455f-a743-312ff064102e&gt;+&lt;https%3A%2F%2Fschema.org%2Fdescription&gt;+%3Fl+.%0D%0A}+&amp;format=text%2Fhtml&amp;should-sponge=&amp;timeout=0&amp;signal_void=on">eingegeben</a> und abgesendet werden. Mit "Results Format" kann das entsprechende Format der Antwort ausgewählt werden (z.B. HTML für die Darstellung im Browser, oder CSV zum Download als Textdatei.). </p>
+<p>Zurück zu LodView. Die LodView Web-Applikation erzeugt also aus dem IRI der im Browser aufgerufen wurde eine Anfrage an den SPARQL-Endpoint des Triplestores, erhält die RDF Daten als Antwort zurück und generiert daraus entweder die Webseite oder die Textdatei mit den Tripeln.</p>
+<p><img alt="" src="kg-images/kg-images%20-%20page%203.svg" /></p>
+<p>Natürlich können auch andere Apps auf den SPARQL-Endpoint zugreifen. Z.B. sind im folgenden Yasgui-Widget ein paar Beispielanfragen vorbereitet, die an den SPARQL-Endpoint gesendet werden können (Klick auf den dicken Pfeil). <a href="https://docs.triply.cc/yasgui/">YasGUI</a> ist ein Javascript-basierter SPARQL Editor. </p>
+<h3 id="los-gehts-mit-sparql">Los geht's mit SPARQL</h3>
+<p><strong>Zeige die ersten 15 Dokumente und ihren Titel:</strong></p>
+<div id="yasgui1"></div>
+
+<p><strong>Zeige 15 Dokumente in deren Titel oder Beschreibungen der Begriff "bismarck" vorkommt:</strong></p>
+<div id="yasgui2"></div>
+
+<h2 id="struktur-der-daten">Struktur der Daten</h2>
+<p>Um zu verstehen, welche Abfragen im Tripelstore möglich sind, ist es essenziell, genau zu wissen, welche Prädikate verwendet werden und welche Objekte sowie Subjekte abgefragt werden können. Mit anderen Worten: Man muss die „Ontologie“ und damit die Struktur der Daten im Tripelstore kennen. Dafür gibt es verschiedene Ansätze. Entweder konsultiert man die vorhandene Dokumentation oder man versucht, die Struktur direkt aus den Daten abzuleiten. Beispielsweise könnte man zunächst alle Prädikate auflisten lassen. Im nächsten Schritt könnte man untersuchen, welche Subjekte ein bestimmtes Prädikat verwenden, und so weiter, bis man genügend Informationen hat, um sinnvolle Abfragen zu formulieren. Idealerweise sind die Daten jedoch umfassend dokumentiert, um diesen Prozess zu erleichtern.</p>
+<p>Mit Hilfe von Visualisierung-Tools wie LodView kann die Struktur der Daten relativ leicht erlernt werden. Schauen wir nochmal etwas genauer auf die Struktur der Ressource in LodView: </p>
+<p><a href="https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e">https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e</a></p>
+<p>Der Titel der Ressource lautet "Satz des Pythagoras". Lodview zeigt den Titel gut lesbar oben an. Die eigentliche Information steckt im Tripel: </p>
+<pre><code>&lt;https://edu.yovisto.com/wlo/resource/a44c7b05-2a37-455f-a743-312ff064102e&gt; &lt;https://schema.org/name&gt; "Satz des Pythagoras" .
+</code></pre>
+<p>Dieses Tripel wird in LodView etwas weiter unten angezeigt. Um den Titel anzugeben wird also das Prädikat "https://schema.org/name" verwendet. </p>
+<p>Auf ähnliche Weise werden auch die folgenden Informationen anhand der Prädikate angezeigt:</p>
+<ul>
+<li>https://schema.org/<strong>description</strong> : Beschreibung der Ressource</li>
+<li>https://schema.org/<strong>keywords</strong> : freie Schlüsselwörter</li>
+<li>https://schema.org/<strong>identifier</strong> : der WLO Identifikator (edusharing Plattform)</li>
+<li>https://schema.org/<strong>license</strong> : die Lizenz der Ressource</li>
+<li>https://schema.org/<strong>url</strong> : der URL der Quelle er Ressource</li>
+<li>http://edu.yovisto.com/ontology/1.0/<strong>dateCreated</strong> : Zeitpunkt an dem die Ressource in WLO angelegt wurde</li>
+<li>http://edu.yovisto.com/ontology/1.0/<strong>dateModified</strong> : Zeitpunkt er letzen Änderung bei WLO</li>
+<li>http://www.w3.org/1999/02/22-rdf-syntax-ns#<strong>type</strong> : Typ der Ressource </li>
+<li>http://www.w3.org/2000/01/rdf-schema#<strong>isDefinedBy</strong> : Named Graph, in dem die Ressource im Triplestore gespeichert ist</li>
+<li>http://xmlns.com/foaf/0.1/<strong>depiction</strong> : verweist auf ein Bild (dies wird von Lodview oben angezeigt) </li>
+<li>https://schema.org/<strong>audience</strong> : verweist auf eine Liste von Nutzer Rollen, für die die Ressource geeignet ist (z.B. für Schüler und/oder Lehrer)</li>
+<li>https://schema.org/<strong>about</strong> : zeigt auf eine Liste von Schulfächern</li>
+<li>http://w3id.org/openeduhub/terms/<strong>educationalContext</strong> : zeigt auf eine Liste von Schulstufen</li>
+<li>http://w3id.org/openeduhub/terms/<strong>widget</strong> : zeigt auf eine Liste von möglichen Darstellungstemplates der WLO Plattform </li>
+<li>https://w3id.org/curriculum/<strong>hasAnnotationTarget</strong> : verweist auf semantische Textannotationen (dazu später mehr)</li>
+</ul>
+<p>In LodView werden einige Prädikate zur besseren Übersichtlichkeit mithilfe von Präfixen abgekürzt. Ein Beispiel hierfür ist die Abkürzung des Prädikats <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</code>, das in der Präfixschreibweise als <code>rdf:type</code> dargestellt wird. Diese Schreibweise macht die Darstellung von Prädikaten kompakter und leichter lesbar, insbesondere bei langen URIs.</p>
+<p>Das Kürzel eines Präfixes, wie beispielsweise <code>rdf:</code> in diesem Fall, kann prinzipiell frei gewählt werden, solange es innerhalb des jeweiligen Kontextes eindeutig bleibt. Dennoch gibt es für einige Präfixe etablierte Konventionen, die in der Praxis weitgehend einheitlich verwendet werden. Beispiele für solche standardisierten Präfixe sind <code>rdf</code> (für das RDF-Vokabular), <code>rdfs</code> (für das RDF Schema), <code>owl</code> (für die Web Ontology Language) und <code>foaf</code> (für das „Friend of a Friend“-Vokabular). Diese Konventionen erleichtern die Arbeit, da sie für Entwickler und Nutzer direkt nachvollziehbar sind und einen einheitlichen Standard gewährleisten.</p>
+<p>Die Präfixschreibweise trägt somit nicht nur zur Übersichtlichkeit bei, sondern erleichtert auch die Zusammenarbeit und das Verständnis in Projekten, die auf RDF-Daten und Ontologien basieren.</p>
+<p>Da wir nun die Struktur eines Dokuments kennen, können wir ein paar weitere komplexere Abfragen machen:</p>
+<p><strong>Zeige 10 Dokumente des Fach Mathematik:</strong></p>
+<div id="yasgui3"></div>
+
+<p>Es ist natürlich hilfreich, wenn vorab bekannt ist, dass der IRI <code>http://w3id.org/openeduhub/vocabs/discipline/380</code> das Schulfach Mathematik repräsentiert. Um alle Schulfächer herauszufinden, könnte z.B. folgende Anfrage ausgeführt werden. </p>
+<p><strong>Zeige alle Schulfächer, die verwendet werden:</strong></p>
+<div id="yasgui4"></div>
+
+<p><strong>Wie viele Dokumente gibt es im Fach Mathematik:</strong></p>
+<div id="yasgui5"></div>
+
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+<p>Der WLO Knowledge Graph enthält die öffentlichen Metadaten der Bildungsinhalte der Wirlernenonline Plattform. Diese sind in RDF gespeichert und über einen SPARQL Endpoint abrufbar. </p>
+<p>In diesem Abschnitt wurde RDF und die Struktur der Daten auf einem recht groben Niveau eingeführt. Für detaillierte Informationen wird auf die entprechenden Standards und Dokumentationen verwiesen. </p>
+<p>In nächsten Abschnitt werden Verfahren zur semantischen Analyse der Bildungsinhalte erläutert. Sie sind die Grundlage für intelligente Vernetzung der Inhalte untereinander und mit anderen externen Inhalten.</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small><div class='footer'><p>created with <a href='https://www.wikidata.org/wiki/Q316'><span>&#10084;</span></a> for <a href='https://its.jointly.info/''>ITsJOINTLY</a> by <a href='https://yovisto.com'>yovisto.com</a> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://yovisto.com/de/impressum/'>Impressum</a> </p></div> <br><img src='https://its.jointly.info/wp-content/uploads/sites/32/2023/09/logos_horizontal-3.svg'><br></small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "."</script>
+    
+    <script src="js/base.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="yasgui.min.js"></script>
+    <script src="app.js"></script>
+    <script src="search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-05-06 13:45:34.623848+00:00
+-->
