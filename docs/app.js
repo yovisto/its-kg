@@ -95,7 +95,7 @@ $(document).ready(function(){
             ?doc a <https://schema.org/CreativeWork> .
             ?doc <https://schema.org/about> ?item .
             ?item <https://schema.org/identifier> ?fach .
-            optional {?item <https://schema.org/name>  ?label}}
+            optional {?item <https://schema.org/name>  ?label}
     } order by ?label
          `);
     
